@@ -4,11 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="main.css">
     <title>California Whitewater</title>
 </head>
 <body>
-    
+    <h1>California Whitewater Rivers</h1>
+    <p>A collection of popular rivers in California for whitewater rafting. Whether you're organizing a private trip or looking for an outfitter, you can find all the information you need here.</p>
+
+    <form id="js-form">
+
+        <h2>Is this a private trip or are you looking for an outfitter?</h2>
+
+        <label><input type="radio" name="tripType" value="private" required>Private trip</label><br>
+        <label><input type="radio" name="tripType" value="outfitter" required>Outfitter trip</label><br>
+
+        <h2>What class are you qualified and looking for?</h2>
+
+        <label><input type="radio" name="classRapids" value="1" required>I</label><br>
+        <label><input type="radio" name="classRapids" value="2" required>II</label><br>
+        <label><input type="radio" name="classRapids" value="3" required>III</label><br>
+        <label><input type="radio" name="classRapids" value="4" required>IV</label><br>
+        <label><input type="radio" name="classRapids" value="5" required>V</label><br>
+        <label><input type="radio" name="classRapids" value="all" required>All</label><br>
+
+        <h2>Choose a river to get more information</h2>
+
+        <label><input type="radio" name="riverName" value="" required>River one</label><br>
+        <label><input type="radio" name="riverName" value="" required>River two</label><br>
+        <label><input type="radio" name="riverName" value="" required>River three</label><br>
+        <label><input type="radio" name="riverName" value="" required>River four</label><br>
+        <label><input type="radio" name="riverName" value="" required>River five</label><br>
+
+        <input type="submit" value="Get info">
+
+    </form>
+
+    <p id="js-err-msg" class="err-msg"></p>
+
+    <section id="results" class="hidden">
+        <hr>
+        <h2 id="js-river-name"></h2>
+        <div id="js-river-info">
+
+        </div>
+    </section>
 
 
     <script
