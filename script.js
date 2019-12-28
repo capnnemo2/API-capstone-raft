@@ -108,8 +108,6 @@ function displayPrivateInfo() {
     const userRiver = $('input[name="riverName"]:checked').val();
     displayRiverInfo(userRiver);
 
-    // call fn displayRiverInfo()
-
     // call fn getDirections()
     // call fn getWeather()
 
@@ -122,7 +120,6 @@ function displayOutfitterInfo() {
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     displayRiverInfo(userRiver);
-    // call fn displayRiverInfo()
 
     // call fn getWeather()
 

@@ -2,7 +2,11 @@ const riverDescrip = [
     {
         id: 'r1',
         name: 'South Fork of the American River, Sacramento',
-        description: 'This is a description of the river'
+        description: 'This is a description of the river.',
+        dreamflows: `This is a link to dreamflows description of the run`,
+        awa: `This is a link to american whitewater`,
+        flow: `This is a link to dreamflows current flow`,
+        outfitters: `There are no outfitters for this run because it is just a float.`
     },
     {
         id: 'r2',
