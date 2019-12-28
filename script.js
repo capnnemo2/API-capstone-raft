@@ -1,26 +1,5 @@
 'use strict';
 
-function watchForm() {
-    $('form').submit(event => {
-        console.log(`ran watchForm`);
-        event.preventDefault();
-        // create a variable to store private vs outfitter
-        const userTripType = $('input[name="tripType"]:checked').val();
-        
-        // create a variable to store class
-        const userClassSelected = $('input[name="classRapids"]:checked').val();
-
-        // if private call fn displayPrivateInfo()
-        //  - call fn getDirections()
-        //  - call fn getWeather()
-
-        // if outfitter call fn displayOutfitterInfo()
-        //  - call fn getWeather()
-
-    });
-}
-
-
 // this function has to run before watchForm!!!
 function displayRiverList() {
     // this part of the function should allow the 'all' checkbox to de/select all. and it works!
@@ -30,7 +9,18 @@ function displayRiverList() {
     });
 
     // depending on which class checkboxes are selected, display the corresponding rivers
-    // surely these can all be expressed in a single loop
+
+    // surely these can all be expressed in a single loop, something like this?
+    // for (let i = 1; i < 6; i++) {
+    //     $('#js-class[i]').change(function() {
+    //         if(this.checked != true) {
+    //             $('#js-class[i]-rivers').hide();
+    //         } else {
+    //             $('#js-class[i]-rivers').show();
+    //         }
+    //     });
+    // }
+
     $('#js-class1').change(function() {
         if(this.checked != true) {
             $('#js-class1-rivers').hide();
@@ -87,8 +77,28 @@ function displayRiverList() {
         }
     });
 
-    wwatchForm();
+    watchForm();
 }
+
+function watchForm() {
+    $('form').submit(event => {
+        console.log(`ran watchForm`);
+        event.preventDefault();
+        // create a variable to store private vs outfitter
+        const userTripType = $('input[name="tripType"]:checked').val();
+        
+        if (userTripType === 'private') {
+            //  - call fn displayPrivateInfo()
+            //  - call fn getDirections()
+            //  - call fn getWeather()
+        } else if (userTripType === 'outfitter') {
+            //  - call fn displayOutfitterInfo()
+            //  - call fn getWeather()
+        }
+
+    });
+}
+
 
 function displayPrivateInfo() {
 
@@ -113,6 +123,7 @@ function displayOutfitterInfo() {
 
 function displayRiverInfo() {
     // display river name and description (and a photo? can I find whitewater photos that aren't proprietary?)
+    // get info from an array?
 }
 
 function getDirections() {
