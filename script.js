@@ -91,7 +91,7 @@ function watchForm() {
 
         if (userTripType === 'private') {
             displayPrivateInfo();
-            //  - call fn getDirections()
+            getDirections();
             //  - call fn getWeather()
         } else if (userTripType === 'outfitter') {
             displayOutfitterInfo();
@@ -108,7 +108,6 @@ function displayPrivateInfo() {
     const userRiver = $('input[name="riverName"]:checked').val();
     displayRiverInfo(userRiver);
 
-    // call fn getDirections()
     // call fn getWeather()
 
     // call fn getPrivateLinks()
@@ -140,14 +139,27 @@ function displayRiverInfo(userRiver) {
 
 }
 
+let userLocation = $('#js-user-location');
+
 function getDirections() {
-    // call fn getUserLocation
+    console.log(`ran getDirections`);
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        userLocation.innerHTML = `Geolocation is not supported by this browser.`;
+    }
     // create a variable for user selected river
     // get take-out location (from an array of locations? (STORE-3?))
     
     // fetch directions from TomTom API
 
     // call fn displayDirections
+}
+
+function showPosition(position) {
+    userLocation = "lat: " + position.coords.latitude + "<br>long: " + position.coords.longitude;
+    console.log(position);
 }
 
 function displayDirections() {
