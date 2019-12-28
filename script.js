@@ -138,10 +138,13 @@ function displayRiverInfo(userRiver) {
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     console.log(userRiverName.name);
     console.log(userRiverName.description);
+    $('#js-river-name').html(userRiverName.name);
+    $('#js-river-descrip').html(userRiverName.description);
 
 }
 
 function getDirections() {
+    // call fn getUserLocation
     // create a variable for user selected river
     // get take-out location (from an array of locations? (STORE-3?))
     
