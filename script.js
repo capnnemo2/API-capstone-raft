@@ -91,11 +91,10 @@ function watchForm() {
 
         if (userTripType === 'private') {
             displayPrivateInfo();
-            //  - call fn displayPrivateInfo()
             //  - call fn getDirections()
             //  - call fn getWeather()
         } else if (userTripType === 'outfitter') {
-            //  - call fn displayOutfitterInfo()
+            displayOutfitterInfo();
             //  - call fn getWeather()
         }
 
@@ -119,7 +118,10 @@ function displayPrivateInfo() {
 }
 
 function displayOutfitterInfo() {
-
+    console.log(`ran displayOutfitterInfo`);
+    $('#results').removeClass('hidden');
+    const userRiver = $('input[name="riverName"]:checked').val();
+    displayRiverInfo(userRiver);
     // call fn displayRiverInfo()
 
     // call fn getWeather()
