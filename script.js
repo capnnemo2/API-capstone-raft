@@ -5,9 +5,10 @@ function watchForm() {
         console.log(`ran watchForm`);
         event.preventDefault();
         // create a variable to store private vs outfitter
+        const userTripType = $('input[name="tripType"]:checked').val();
+        
         // create a variable to store class
-
-        // create a function to display rivers based on class selected
+        const userClassSelected = $('input[name="classRapids"]:checked').val();
 
         // if private call fn displayPrivateInfo()
         //  - call fn getDirections()
@@ -17,6 +18,76 @@ function watchForm() {
         //  - call fn getWeather()
 
     });
+}
+
+
+// this function has to run before watchForm!!!
+function displayRiverList() {
+    // this part of the function should allow the 'all' checkbox to de/select all. and it works!
+    console.log(`ran displayRiverList`);
+    $('#js-check-all').click(function() {
+        $('input:checkbox').not(this).prop('checked', this.checked);
+    });
+
+    // depending on which class checkboxes are selected, display the corresponding rivers
+    // surely these can all be expressed in a single loop
+    $('#js-class1').change(function() {
+        if(this.checked != true) {
+            $('#js-class1-rivers').hide();
+        } else {
+            $('#js-class1-rivers').show();
+        }
+    });
+
+    $('#js-class2').change(function() {
+        if(this.checked != true) {
+            $('#js-class2-rivers').hide();
+        } else {
+            $('#js-class2-rivers').show();
+        }
+    });
+
+    $('#js-class3').change(function() {
+        if(this.checked != true) {
+            $('#js-class3-rivers').hide();
+        } else {
+            $('#js-class3-rivers').show();
+        }
+    });
+
+    $('#js-class4').change(function() {
+        if(this.checked != true) {
+            $('#js-class4-rivers').hide();
+        } else {
+            $('#js-class4-rivers').show();
+        }
+    });
+
+    $('#js-class5').change(function() {
+        if(this.checked != true) {
+            $('#js-class5-rivers').hide();
+        } else {
+            $('#js-class5-rivers').show();
+        }
+    });
+
+    $('#js-check-all').change(function() {
+        if(this.checked != true) {
+            $('#js-class1-rivers').hide();
+            $('#js-class2-rivers').hide();
+            $('#js-class3-rivers').hide();
+            $('#js-class4-rivers').hide();
+            $('#js-class5-rivers').hide();
+        } else {
+            $('#js-class1-rivers').show();
+            $('#js-class2-rivers').show();
+            $('#js-class3-rivers').show();
+            $('#js-class4-rivers').show();
+            $('#js-class5-rivers').show();
+        }
+    });
+
+    wwatchForm();
 }
 
 function displayPrivateInfo() {
@@ -90,4 +161,4 @@ function displayOutfitterLinks() {
 }
 
 
-$(watchForm);
+$(displayRiverList);

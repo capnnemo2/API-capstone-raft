@@ -21,29 +21,55 @@
 
         <h2>What class are you qualified and looking for?</h2>
 
-        <label><input type="radio" name="classRapids" value="1" required>I</label><br>
-        <label><input type="radio" name="classRapids" value="2" required>II</label><br>
-        <label><input type="radio" name="classRapids" value="3" required>III</label><br>
-        <label><input type="radio" name="classRapids" value="4" required>IV</label><br>
-        <label><input type="radio" name="classRapids" value="5" required>V</label><br>
-        <label><input type="radio" name="classRapids" value="all" required>All</label><br>
+        <label><input id="js-class1" type="checkbox" name="classRapids" value="1">I</label>
+        <label><input id="js-class2" type="checkbox" name="classRapids" value="2">II</label>
+        <label><input id="js-class3" type="checkbox" name="classRapids" value="3">III</label>
+        <label><input id="js-class4" type="checkbox" name="classRapids" value="4">IV</label>
+        <label><input id="js-class5" type="checkbox" name="classRapids" value="5">V</label>
+        <label><input id="js-check-all" type="checkbox" name="classRapids" required>All</label>
 
+        <!-- this header should also be hidden until rivers are listed -->
         <h2>Choose a river to get more information</h2>
-
-        <label><input type="radio" name="riverName" value="" required>North Fork of the American River</label><br>
-        <label><input type="radio" name="riverName" value="" required>Middle Fork of the American River</label><br>
-        <label><input type="radio" name="riverName" value="" required>South Fork of the American River</label><br>
-        <label><input type="radio" name="riverName" value="" required>California Salmon River</label><br>
-        <label><input type="radio" name="riverName" value="" required>Tuolumne River</label><br>
-        <label><input type="radio" name="riverName" value="" required>Cherry Creek</label><br>
-        <label><input type="radio" name="riverName" value="" required>Merced River</label><br>
-        <label><input type="radio" name="riverName" value="" required>Kaweah River</label><br>
-        <label><input type="radio" name="riverName" value="" required>Kern River</label><br>
-        <label><input type="radio" name="riverName" value="" required>Truckee River</label><br>
-        <label><input type="radio" name="riverName" value="" required>North Fork of the Yuba River</label><br>
-        <label><input type="radio" name="riverName" value="" required>East Fork of the Carson River</label><br>
         
+        <section>
 
+            <div id="js-class1-rivers" class="class1 hidden">
+                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, Sacramento</label><br>
+            </div>
+    
+            <div id="js-class2-rivers" class="class2 hidden">
+                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, C2G</label><br>
+                <label><input type="radio" name="riverName" value="" required>East Fork of the Carson River</label><br>
+            </div>
+    
+            <div id="js-class3-rivers" class="class3 hidden">
+                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, Upper</label><br>
+                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, Lower</label><br>
+                <label><input type="radio" name="riverName" value="" required>Truckee River</label><br>
+                <label><input type="radio" name="riverName" value="" required>Kaweah River, Lower</label><br>
+                <label><input type="radio" name="riverName" value="" required>Kern River, Lower</label><br>
+            </div>
+    
+            <div id="js-class4-rivers" class="class4 hidden">
+                <label><input type="radio" name="riverName" value="" required>North Fork of the American River</label><br>
+                <label><input type="radio" name="riverName" value="" required>Middle Fork of the American River</label><br>
+                <label><input type="radio" name="riverName" value="" required>Tuolumne River</label><br>
+                <label><input type="radio" name="riverName" value="" required>Merced River</label><br>
+                <label><input type="radio" name="riverName" value="" required>Kaweah River, Upper</label><br>
+                <label><input type="radio" name="riverName" value="" required>Kern River, Upper</label><br>
+            </div>
+    
+            <div id="js-class5-rivers" class="class5 hidden">
+                <label><input type="radio" name="riverName" value="" required>California Salmon River</label><br>
+                <label><input type="radio" name="riverName" value="" required>Cherry Creek</label><br>
+                <label><input type="radio" name="riverName" value="" required>North Fork of the Yuba River</label><br>
+                <label><input type="radio" name="riverName" value="" required>Kern River, Forks</label><br> 
+            </div>
+    
+        </section>
+        
+              
+        <!-- this button should be hidden until rivers are listed -->
         <input type="submit" value="Get info">
 
     </form>
