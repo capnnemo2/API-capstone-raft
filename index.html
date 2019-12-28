@@ -33,37 +33,39 @@
         
         <section>
 
+            <!-- need to decide values: simple numbering system 1-x? -->
+            <!-- or assign IDs? -->
             <div id="js-class1-rivers" class="class1 hidden">
-                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, Sacramento</label><br>
+                <label><input type="radio" name="riverName" value="r1" required>South Fork of the American River, Sacramento</label><br>
             </div>
     
             <div id="js-class2-rivers" class="class2 hidden">
-                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, C2G</label><br>
-                <label><input type="radio" name="riverName" value="" required>East Fork of the Carson River</label><br>
+                <label><input type="radio" name="riverName" value="r2" required>South Fork of the American River, C2G</label><br>
+                <label><input type="radio" name="riverName" value="r18" required>East Fork of the Carson River</label><br>
             </div>
     
             <div id="js-class3-rivers" class="class3 hidden">
-                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, Upper</label><br>
-                <label><input type="radio" name="riverName" value="" required>South Fork of the American River, Lower</label><br>
-                <label><input type="radio" name="riverName" value="" required>Truckee River</label><br>
-                <label><input type="radio" name="riverName" value="" required>Kaweah River, Lower</label><br>
-                <label><input type="radio" name="riverName" value="" required>Kern River, Lower</label><br>
+                <label><input type="radio" name="riverName" value="r3" required>South Fork of the American River, Upper</label><br>
+                <label><input type="radio" name="riverName" value="r4" required>South Fork of the American River, Lower</label><br>
+                <label><input type="radio" name="riverName" value="r5" required>Truckee River</label><br>
+                <label><input type="radio" name="riverName" value="r7" required>Kaweah River, Lower</label><br>
+                <label><input type="radio" name="riverName" value="r9" required>Kern River, Lower</label><br>
             </div>
     
             <div id="js-class4-rivers" class="class4 hidden">
-                <label><input type="radio" name="riverName" value="" required>North Fork of the American River</label><br>
-                <label><input type="radio" name="riverName" value="" required>Middle Fork of the American River</label><br>
-                <label><input type="radio" name="riverName" value="" required>Tuolumne River</label><br>
-                <label><input type="radio" name="riverName" value="" required>Merced River</label><br>
-                <label><input type="radio" name="riverName" value="" required>Kaweah River, Upper</label><br>
-                <label><input type="radio" name="riverName" value="" required>Kern River, Upper</label><br>
+                <label><input type="radio" name="riverName" value="r11" required>North Fork of the American River</label><br>
+                <label><input type="radio" name="riverName" value="r12" required>Middle Fork of the American River</label><br>
+                <label><input type="radio" name="riverName" value="r13" required>Tuolumne River</label><br>
+                <label><input type="radio" name="riverName" value="r14" required>Merced River</label><br>
+                <label><input type="radio" name="riverName" value="r6" required>Kaweah River, Upper</label><br>
+                <label><input type="radio" name="riverName" value="r8" required>Kern River, Upper</label><br>
             </div>
     
             <div id="js-class5-rivers" class="class5 hidden">
-                <label><input type="radio" name="riverName" value="" required>California Salmon River</label><br>
-                <label><input type="radio" name="riverName" value="" required>Cherry Creek</label><br>
-                <label><input type="radio" name="riverName" value="" required>North Fork of the Yuba River</label><br>
-                <label><input type="radio" name="riverName" value="" required>Kern River, Forks</label><br> 
+                <label><input type="radio" name="riverName" value="r15" required>California Salmon River</label><br>
+                <label><input type="radio" name="riverName" value="r16" required>Cherry Creek</label><br>
+                <label><input type="radio" name="riverName" value="r17" required>North Fork of the Yuba River</label><br>
+                <label><input type="radio" name="riverName" value="r10" required>Kern River, Forks</label><br> 
             </div>
     
         </section>
@@ -76,12 +78,11 @@
 
     <p id="js-err-msg" class="err-msg"></p>
 
+
     <section id="results" class="hidden">
         <hr>
         <h2 id="js-river-name"></h2>
-        <div id="js-river-info">
-
-        </div>
+        <div id="js-river-info"></div>
     </section>
 
 
@@ -89,6 +90,7 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    <script src="riverDescrip.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

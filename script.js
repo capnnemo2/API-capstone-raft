@@ -87,7 +87,10 @@ function watchForm() {
         // create a variable to store private vs outfitter
         const userTripType = $('input[name="tripType"]:checked').val();
         
+        
+
         if (userTripType === 'private') {
+            displayPrivateInfo();
             //  - call fn displayPrivateInfo()
             //  - call fn getDirections()
             //  - call fn getWeather()
@@ -101,6 +104,10 @@ function watchForm() {
 
 
 function displayPrivateInfo() {
+    console.log(`ran displayPrivateInfo`);
+    $('#results').removeClass('hidden');
+    const userRiver = $('input[name="riverName"]:checked').val();
+    displayRiverInfo(userRiver);
 
     // call fn displayRiverInfo()
 
@@ -121,9 +128,15 @@ function displayOutfitterInfo() {
     // this fn will access a STORE-2 array with preset links to appropriate companies for each river
 }
 
-function displayRiverInfo() {
+function displayRiverInfo(userRiver) {
     // display river name and description (and a photo? can I find whitewater photos that aren't proprietary?)
     // get info from an array?
+    // uses const userRiver (value of river radio) matches it to riverDescrip array ID
+
+    const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
+    console.log(userRiverName.name);
+    console.log(userRiverName.description);
+
 }
 
 function getDirections() {

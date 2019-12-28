@@ -1,70 +1,92 @@
 const riverDescrip = [
     {
+        id: 'r1',
         name: 'South Fork of the American River, Sacramento',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r2',
         name: 'South Fork of the American River, Coloma to Greenwood',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r3',
         name: 'South Fork of the American River, Upper',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r4',
         name: 'South Fork of the American River, Lower',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r5',
         name: 'Truckee River',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r6',
         name: 'Kaweah River, Upper',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r7',
         name: 'Kaweah River, Lower',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r8',
         name: 'Kern River, Upper',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r9',
         name: 'Kern River, Lower',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r10',
         name: 'Kern River, Forks of the Kern',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r11',
         name: 'North Fork of the American River',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r12',
         name: 'Middle Fork of the American River',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r13',
         name: 'Tuolumne River',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r14',
         name: 'Merced River',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r15',
         name: 'California Salmon River',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r16',
         name: 'Cherry Creek',
-        description: ''
+        description: 'This is a description of the river'
     },
     {
+        id: 'r17',
         name: 'North Fork of the Yuba River',
-        description: ''
+        description: 'This is a description of the river'
+    },
+    {
+        id: 'r18',
+        name: 'East Fork of the Carson River',
+        description: 'This is a description of the river'
     }
 ]
