@@ -129,8 +129,6 @@ function displayOutfitterInfo() {
 
 function displayRiverInfo(userRiver) {
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
-    console.log(userRiverName.name);
-    console.log(userRiverName.description);
     $('#js-river-name').html(userRiverName.name);
     $('#js-river-descrip').html(userRiverName.description);
 
@@ -177,10 +175,13 @@ function displayDirections() {
 function getWeather(userRiver) {
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     
-    const weatherURL = 'https://pro.openweathermap.org/data/2.5/forecast/hourly';
-    const queryString = `lat=${userRiverName.lat}&long=${userRiverName.long}`;
+    const weatherURL = 'https://api.openweathermap.org/data/2.5/weather';
+    const latitude = Math.round(`${userRiverName.lat}`);
+    const longitude = Math.round(`${userRiverName.long}`);
+    const queryString = `lat=` + latitude + `&lon=` + longitude;
     const weatherApiKey = `appid=f83705c417eaaaa1cacb48b69b90c169`;
     const searchWeatherURL = weatherURL + '?' + queryString + '&' + weatherApiKey;
+    console.log(searchWeatherURL);
 
     fetch(searchWeatherURL)
     .then(response => {
@@ -199,6 +200,8 @@ function getWeather(userRiver) {
 }
 
 function displayWeather() {
+    console.log(responseJson);
+    $('#js-weather').html('Current weather at take-out:');
 
 }
 
