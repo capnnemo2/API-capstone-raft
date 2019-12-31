@@ -79,20 +79,30 @@
     <hr>
     <p id="js-err-msg" class="err-msg"></p>
 
-
+    <!-- when we go live there should be a js autoscroll own to the results section -->
     <section id="results" class="hidden">
         <hr>
         <h2 id="js-river-name"></h2>
 
         <p id="js-river-descrip"></p>
 
-        <p id="js-user-location"></p>
         
+
         <div>
-            <h3 id="js-weather"></h3>
+            <h3 id="js-weather">Current weather at take-out:</h3>
+            <ul id="js-weather-details">
+                <li>weather.main</li>
+                <li>weather.description</li>
+                <li>main.temp</li>
+                <li>main.feels_like</li>
+                <li>wind.speed</li>
+            </ul>
         </div>
         
-        <p id="js-directions"></p>
+        <div id="js-directions">
+            <h3>Current user location:</h3>
+            <p id="js-user-location"></p>
+        </div>
     </section>
 
 

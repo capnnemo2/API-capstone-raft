@@ -194,14 +194,14 @@ function getWeather(userRiver) {
     .catch(err => {
         $('#js-err-msg').text(`The weather gods are indecisive: ${err.message}. Please try again later.`)
     });
-    console.log(responseJson);
-
+   
     // call fn displayWeather()
 }
 
 function displayWeather() {
-    console.log(responseJson);
+    // console.log(responseJson);
     $('#js-weather').html('Current weather at take-out:');
+    $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather.main}</li>`);
 
 }
 
