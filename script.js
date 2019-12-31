@@ -1,6 +1,6 @@
 'use strict';
 
-// this function has to run before watchForm!!!
+
 function displayRiverList() {
     // this part of the function should allow the 'all' checkbox to de/select all. and it works!
     console.log(`ran displayRiverList`);
@@ -127,10 +127,6 @@ function displayOutfitterInfo() {
 }
 
 function displayRiverInfo(userRiver) {
-    // display river name and description (and a photo? can I find whitewater photos that aren't proprietary?)
-    // get info from an array?
-    // uses const userRiver (value of river radio) matches it to riverDescrip array ID
-
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     console.log(userRiverName.name);
     console.log(userRiverName.description);
@@ -139,18 +135,16 @@ function displayRiverInfo(userRiver) {
 
 }
 
-let userLocation = $('#js-user-location');
-
 function getDirections() {
     console.log(`ran getDirections`);
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-        userLocation.innerHTML = `Geolocation is not supported by this browser.`;
+        $('#js-user-location').html = `Geolocation is not supported by this browser.`;
     }
-    // create a variable for user selected river
-    // get take-out location (from an array of locations? (STORE-3?))
+
+    // get take-out location (from array)
     
     // fetch directions from TomTom API
 
@@ -158,8 +152,11 @@ function getDirections() {
 }
 
 function showPosition(position) {
-    userLocation = "lat: " + position.coords.latitude + "<br>long: " + position.coords.longitude;
+    console.log(`ran showPosition`);
+    $('#js-user-location').html("lat: " + position.coords.latitude + "<br>long: " + position.coords.longitude);
     console.log(position);
+    console.log(position.coords.latitude);
+    console.log(position.coords.longitude);
 }
 
 function displayDirections() {

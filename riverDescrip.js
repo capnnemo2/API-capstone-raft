@@ -6,7 +6,8 @@ const riverDescrip = [
         dreamflows: `This is a link to dreamflows description of the run`,
         awa: `This is a link to american whitewater`,
         flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`
+        outfitters: `There are no outfitters for this run because it is just a float.`,
+        takeout: `This is the lat/long of the take-out`
     },
     {
         id: 'r2',
