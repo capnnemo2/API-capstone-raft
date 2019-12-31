@@ -109,6 +109,7 @@ function displayPrivateInfo() {
     displayRiverInfo(userRiver);
 
     // call fn getWeather()
+    getWeather(userRiver);
 
     // call fn getPrivateLinks()
     // this fn will access a STORE-1 array with preset links to dreamflows, ca creeks, american whitewater, a wet state for each river
@@ -145,6 +146,16 @@ function getDirections() {
     }
 
     // get take-out location (from array)
+
+
+    // tomtom.routing()
+    //     .locations('38.0051456,-121.2973056:38.826396,-120.949185')
+    //     .go().then(function(routeJson) {
+    //         let route = tomtomt.L.geoJson(routeJson, {
+    //             style: {color: '#00d7ff', opacity: 0.6, weight: 6}
+    //         }).addTo(map);
+    //         map.fitBounds(route.getBounds(), {padding: [5, 5]});
+    //     });
     
     // fetch directions from TomTom API
 
@@ -163,10 +174,26 @@ function displayDirections() {
     
 }
 
-function getWeather() {
-    // get take-out location (from an array of locations? (STORE-3?))
+function getWeather(userRiver) {
+    const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
+    
+    const weatherURL = 'https://pro.openweathermap.org/data/2.5/forecast/hourly';
+    const queryString = `lat=${userRiverName.lat}&long=${userRiverName.long}`;
+    const weatherApiKey = `appid=f83705c417eaaaa1cacb48b69b90c169`;
+    const searchWeatherURL = weatherURL + '?' + queryString + '&' + weatherApiKey;
 
-    // fetch weather from OpenWeather API
+    fetch(searchWeatherURL)
+    .then(response => {
+        if(response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+    })
+    .then(responseJson => displayWeather(responseJson))
+    .catch(err => {
+        $('#js-err-msg').text(`The weather gods are indecisive: ${err.message}. Please try again later.`)
+    });
+    console.log(responseJson);
 
     // call fn displayWeather()
 }

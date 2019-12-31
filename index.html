@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="main.css">
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.42.0/maps/maps.css'>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.42.0/maps/maps-web.min.js"></script>
     <title>California Whitewater</title>
 </head>
 <body>
@@ -33,10 +35,8 @@
         
         <section>
 
-            <!-- need to decide values: simple numbering system 1-x? -->
-            <!-- or assign IDs? -->
             <div id="js-class1-rivers" class="class1 hidden">
-                <label><input type="radio" name="riverName" value="r1" required>South Fork of the American River, Sacramento</label><br>
+                <label><input type="radio" name="riverName" value="r1" required>American River, Sacramento</label><br>
             </div>
     
             <div id="js-class2-rivers" class="class2 hidden">
@@ -84,6 +84,8 @@
         <h2 id="js-river-name"></h2>
         <p id="js-river-descrip"></p>
         <p id="js-user-location"></p>
+        <p id="js-weather"></p>
+        <p id="js-directions"></p>
     </section>
 
 
@@ -91,6 +93,7 @@
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
+    
     <script src="riverDescrip.js"></script>
     <script src="script.js"></script>
 </body>
