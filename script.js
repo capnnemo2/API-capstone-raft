@@ -199,7 +199,7 @@ function getWeather(userRiver) {
 }
 
 function displayWeather() {
-    console.log(responseJson);
+    // console.log(responseJson);
     $('#js-weather').html('Current weather at take-out:');
     $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather.main}</li>`);
 

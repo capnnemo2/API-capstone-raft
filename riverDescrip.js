@@ -66,7 +66,7 @@ const riverDescrip = [
     {
         id: 'r7',
         name: 'Kaweah River, Lower',
-        description: 'A family-friendly class III run.',
+        description: 'A family-friendly class III run. Put-in is in the town of Three Rivers and Holiday Falls Rapid (III+-IV) is often not run because of variable reservoir levels.',
         creekin: `http://cacreeks.com/kaweah.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/210/`,
         flow: `https://www.dreamflows.com/graphs/day.103.php`,
@@ -80,7 +80,7 @@ const riverDescrip = [
         creekin: `This is a link to dreamflows description of the run`,
         awa: `This is a link to american whitewater`,
         flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
+        outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
         takeout: `This is the lat/long of the take-out`
     },
     {
@@ -90,17 +90,17 @@ const riverDescrip = [
         creekin: `This is a link to dreamflows description of the run`,
         awa: `This is a link to american whitewater`,
         flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
+        outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
         takeout: `This is the lat/long of the take-out`
     },
     {
         id: 'r10',
         name: 'Kern River, Forks of the Kern',
-        description: 'This is a description of the river',
+        description: 'Granite slab canyon within Sequoia National Forest. Put-in access is via a three mile Forest Service trail. Pack animals are normally utilized to move gear for this run that is typically done in 2-3 days.',
         creekin: `This is a link to dreamflows description of the run`,
         awa: `This is a link to american whitewater`,
         flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
+        outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
         takeout: `This is the lat/long of the take-out`
     },
     {
