@@ -198,10 +198,17 @@ function getWeather(userRiver) {
     // call fn displayWeather()
 }
 
-function displayWeather() {
-    // console.log(responseJson);
+function displayWeather(responseJson) {
+    console.log(responseJson);
     $('#js-weather').html('Current weather at take-out:');
-    $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather.main}</li>`);
+    // $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather.0.main}</li>`);
+    const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
+    const temp2 = Math.round((responseJson.main.feels_like - 273) * 9/5 + 32);
+    $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather[0].main}</li>`);
+    $('#js-weather-details').append(`<li>Temperature: ${temp}°F</li>`);
+    $('#js-weather-details').append(`<li>Feels like: ${temp2}°F</li>`);
+    $('#js-weather-details').append(`<li>Wind speed: ${responseJson.wind.speed} mph</li>`);
+
 
 }
 

@@ -6,7 +6,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-low.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/4538`,
         flow: `https://www.dreamflows.com/graphs/day.076.php`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
+        outfitters: `There are no outfitters for this run.`,
         takeout: `38.566566,-121.383601`,
         lat: `38.566566`,
         long: `-121.38360`
@@ -76,8 +76,8 @@ const riverDescrip = [
     {
         id: 'r8',
         name: 'Kern River, Upper',
-        description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
+        description: 'There are multiple different sections that can be run, depending on flows. At lower flows, the Limestone run offers the best class IV water.',
+        creekin: `http://cacreeks.com/kern-nf.htm`,
         awa: `This is a link to american whitewater`,
         flow: `This is a link to dreamflows current flow`,
         outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
@@ -97,7 +97,7 @@ const riverDescrip = [
         id: 'r10',
         name: 'Kern River, Forks of the Kern',
         description: 'Granite slab canyon within Sequoia National Forest. Put-in access is via a three mile Forest Service trail. Pack animals are normally utilized to move gear for this run that is typically done in 2-3 days.',
-        creekin: `This is a link to dreamflows description of the run`,
+        creekin: `http://cacreeks.com/kern-fks.htm`,
         awa: `This is a link to american whitewater`,
         flow: `This is a link to dreamflows current flow`,
         outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
@@ -106,21 +106,21 @@ const riverDescrip = [
     {
         id: 'r11',
         name: 'North Fork of the American River',
-        description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: [`AO link, Malode link, OARS link, Tributary link`],
+        description: 'A classic run beginning with several miles of class IV water before mellowing out in scenic class II. Chamberlain Falls (IV) and Bogus Thunder (IV), which merits a scout, are highlights.',
+        creekin: `http://cacreeks.com/amer-nch.htm`,
+        awa: `https://www.americanwhitewater.org/content/River/detail/id/139`,
+        flow: `https://www.dreamflows.com/graphs/day.069.php`,
+        outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
         takeout: `This is the lat/long of the take-out`
     },
     {
         id: 'r12',
         name: 'Middle Fork of the American River',
-        description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: [`AO link, Malode link, OARS link, Tributary link`],
+        description: 'The first significant rapid, Tunnel Chute (IV+), runs through a man-made tunnel. A relaxing class II section in the middle before the Ruck-a-Chucky (VI) portage. The end of the run consists of a string of class IV rapids in quick succession.',
+        creekin: `http://cacreeks.com/amer-mf1.htm`,
+        awa: `https://www.americanwhitewater.org/content/River/detail/id/136`,
+        flow: `https://www.dreamflows.com/graphs/day.070.php`,
+        outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
         takeout: `This is the lat/long of the take-out`
     },
     {
@@ -166,21 +166,21 @@ const riverDescrip = [
     {
         id: 'r17',
         name: 'North Fork of the Yuba River',
-        description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
+        description: 'A roadside run with several class IV rapids. The highlight is Maytag (V-), whose rating is bumped up because Son of Maytag (IV) is immediately downstream.',
+        creekin: `http://cacreeks.com/yuba-nfg.htm`,
+        awa: `https://www.americanwhitewater.org/content/River/detail/id/340`,
+        flow: `https://www.dreamflows.com/graphs/day.057.php`,
+        outfitters: `https://whitewatertours.com/`,
         takeout: `This is the lat/long of the take-out`
     },
     {
         id: 'r18',
         name: 'East Fork of the Carson River',
-        description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
+        description: 'A simple class II run. Sidewinder Rapid (III) provides some excitement with a short drop. The highlight of this two-day run are the hot springs on either side of the river which provide popular campsites.',
+        creekin: `http://cacreeks.com/carson-e.htm`,
+        awa: `https://www.americanwhitewater.org/content/River/detail/id/162`,
+        flow: `https://www.dreamflows.com/graphs/day.108.php`,
+        outfitters: `There are no outfitters for this run.`,
         takeout: `This is the lat/long of the take-out`
     }
 ]
