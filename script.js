@@ -208,6 +208,7 @@ function displayWeather(responseJson) {
     $('#js-weather-details').append(`<li>Temperature: ${temp}°F</li>`);
     $('#js-weather-details').append(`<li>Feels like: ${temp2}°F</li>`);
     $('#js-weather-details').append(`<li>Wind speed: ${responseJson.wind.speed} mph</li>`);
+    $('#js-weather-details').append(`<img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon">`);
 
 
 }
