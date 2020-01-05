@@ -19,7 +19,7 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/5117`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,
         outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
-        takeout: `38.826396,-120.949185`,
+        takeout: `38.826396%2C-120.949185`,
         lat: `38.826396`,
         long: `-120.949185`
     },

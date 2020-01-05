@@ -130,49 +130,56 @@ function displayRiverInfo(userRiver) {
 
 function getDirections() {
     console.log(`ran getDirections`);
+    // getDirections gets the user location
 
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
+        navigator.geolocation.getCurrentPosition(displayDirections);
+        // change above line: replace showPosition to displayDirections to change the success outcome
     } else {
         $('#js-user-location').html = `Sorry, geolocation is not supported by this browser.`;
     }
 
     // get take-out location (from array)
 
-    tomtom.routing()
-        .locations()
-        .go().then(function(routeJson) {
-            let route = tomtom.L.geoJson(routeJson, {
-                style: {color: '#00d7ff', opacity: 0.6, weight: 6}
-            }).addTo(map);
-            map.fitBounds(route.getBounds(), {padding: [5, 5]});
-        });
-
-
-    // tomtom.routing()
-    //     .locations('38.0051456,-121.2973056:38.826396,-120.949185')
-    //     .go().then(function(routeJson) {
-    //         let route = tomtomt.L.geoJson(routeJson, {
-    //             style: {color: '#00d7ff', opacity: 0.6, weight: 6}
-    //         }).addTo(map);
-    //         map.fitBounds(route.getBounds(), {padding: [5, 5]});
-    //     });
-    
-    // fetch directions from TomTom API
-
-    // call fn displayDirections
 }
 
-function showPosition(position) {
-    console.log(`ran showPosition`);
-    $('#js-user-location').html("lat: " + position.coords.latitude + "<br>long: " + position.coords.longitude);
-    console.log(position);
+// function showPosition(position) {
+//     console.log(`ran showPosition`);
+//     $('#js-user-location').html("lat: " + position.coords.latitude + "<br>long: " + position.coords.longitude);
+//     console.log(position);
+//     console.log(position.coords.latitude);
+//     console.log(position.coords.longitude);
+// }
+
+function displayDirections(position) {
+    // this function will display the travel time and distance to the take-out
+    console.log(`ran displayDirections`);
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
-}
 
-function displayDirections() {
+    const lat = position.coords.latitude;
+    const long = position.coords.longitude;
+
+    const userRiver = $('input[name="riverName"]:checked').val();
+    const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
+    const userRiverCoords = userRiver.takeout;
+
+    $('#js-user-location').html("lat: " + lat + "<br>long: " + long);
+
+    const getTravelTimeURL = `https://api.tomtom.com/routing/1/calculateRoute/${lat}%2C${long}%3A${userRiverCoords}38.0051456%2C-121.2973056%3A38.826396%2C-120.949185/json?avoid=unpavedRoads&key=MmbpnXLGCMLejulVsu5VFZOlWUSUivGs`
+    fetch(getTravelTimeURL)
+    .then(response => {
+        if(response.ok) {
+            return response.json();
+        }
+        throw new Error(response.statusText);
+    })
+    .then(responseJson => console.log(responseJson))
+    .catch(err => {
+        $('#js-directions-err-msg').text(`TomTom threw a temper tantrum and ${err.message}. Please try again in a few moments.`);
+    });
     
+
 }
 
 function getWeather(userRiver) {
