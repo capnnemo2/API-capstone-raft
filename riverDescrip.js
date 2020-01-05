@@ -18,7 +18,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/5117`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        outfitters: [`https://www.aorafting.com/`, `https://www.arta.org/`, `https://www.malode.com/`, `https://www.oars.com/`, `https://whitewatertours.com/`],
         takeout: `38.826396%2C-120.949185`,
         lat: `38.826396`,
         long: `-120.949185`
@@ -30,7 +30,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/148`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        outfitters: [`https://www.aorafting.com/`, `https://www.arta.org/`, `https://www.malode.com/`, `https://www.oars.com/`, `https://whitewatertours.com/`],
         takeout: `38.805789%2C-120.894110`,
         lat: `38.805789`,
         long: `-120.894110`
@@ -42,7 +42,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/4068`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        outfitters: [`https://www.aorafting.com/`, `https://www.arta.org/`, `https://www.malode.com/`, `https://www.oars.com/`, `https://whitewatertours.com/`],
         takeout: `38.772974%2C-121.035074`,
         lat: `38.772974`,
         long: `-121.035074`
@@ -54,7 +54,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/truckee.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/322/`,
         flow: `https://www.dreamflows.com/graphs/day.165.php`,
-        outfitters: `https://whitewatertours.com/`,
+        outfitters: [`https://whitewatertours.com/`],
         takeout: `39.419932%2C-120.031325`,
         lat: `39.419932`,
         long: `-120.031325`
@@ -66,7 +66,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/kaweah.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/212/`,
         flow: `https://www.dreamflows.com/graphs/day.103.php`,
-        outfitters: `http://kaweah-whitewater.com/`,
+        outfitters: [`http://kaweah-whitewater.com/`],
         takeout: `36.438346%2C-118.906004`,
         lat: `36.438346`,
         long: `-118.906004`
@@ -78,47 +78,47 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/kaweah.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/210/`,
         flow: `https://www.dreamflows.com/graphs/day.103.php`,
-        outfitters: `http://kaweah-whitewater.com/`,
+        outfitters: [`http://kaweah-whitewater.com/`],
         takeout: `36.412747%2C-118.937156`,
         lat: `36.412747`,
         long: `-118.937156`
     },
-    {
-        id: 'r8',
-        name: 'Kern River, Upper',
-        description: 'There are multiple different sections that can be run, depending on flows. At lower flows, the Limestone run offers the best class IV water.',
-        creekin: `http://cacreeks.com/kern-nf.htm`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
-    },
-    {
-        id: 'r9',
-        name: 'Kern River, Lower',
-        description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
-    },
-    {
-        id: 'r10',
-        name: 'Kern River, Forks of the Kern',
-        description: 'Granite slab canyon within Sequoia National Forest. Put-in access is via a three mile Forest Service trail. Pack animals are normally utilized to move gear for this run that is typically done in 2-3 days.',
-        creekin: `http://cacreeks.com/kern-fks.htm`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
-    },
+    // {
+    //     id: 'r8',
+    //     name: 'Kern River, Upper',
+    //     description: 'There are multiple different sections that can be run, depending on flows. At lower flows, the Limestone run offers the best class IV water.',
+    //     creekin: `http://cacreeks.com/kern-nf.htm`,
+    //     awa: `This is a link to american whitewater`,
+    //     flow: `This is a link to dreamflows current flow`,
+    //     outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
+    //     takeout: `This is the lat/long of the take-out`,
+    //     lat: ``,
+    //     long: ``
+    // },
+    // {
+    //     id: 'r9',
+    //     name: 'Kern River, Lower',
+    //     description: 'This is a description of the river',
+    //     creekin: `This is a link to dreamflows description of the run`,
+    //     awa: `This is a link to american whitewater`,
+    //     flow: `This is a link to dreamflows current flow`,
+    //     outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
+    //     takeout: `This is the lat/long of the take-out`,
+    //     lat: ``,
+    //     long: ``
+    // },
+    // {
+    //     id: 'r10',
+    //     name: 'Kern River, Forks of the Kern',
+    //     description: 'Granite slab canyon within Sequoia National Forest. Put-in access is via a three mile Forest Service trail. Pack animals are normally utilized to move gear for this run that is typically done in 2-3 days.',
+    //     creekin: `http://cacreeks.com/kern-fks.htm`,
+    //     awa: `This is a link to american whitewater`,
+    //     flow: `This is a link to dreamflows current flow`,
+    //     outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
+    //     takeout: `This is the lat/long of the take-out`,
+    //     lat: ``,
+    //     long: ``
+    // },
     {
         id: 'r11',
         name: 'North Fork of the American River',
@@ -126,7 +126,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-nch.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/139`,
         flow: `https://www.dreamflows.com/graphs/day.069.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        outfitters: [`https://www.aorafting.com/`, `https://www.malode.com/`, `https://www.oars.com/`, `https://whitewatertours.com/`],
         takeout: `39.000074%2C-120.939647`,
         lat: `39.000074`,
         long: `-120.939647`
@@ -138,7 +138,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-mf1.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/136`,
         flow: `https://www.dreamflows.com/graphs/day.070.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        outfitters: [`https://www.aorafting.com/`, `https://www.arta.org/`, `https://www.malode.com/`, `https://www.oars.com/`, `https://whitewatertours.com/`],
         takeout: `38.962018%2C-120.931663`,
         lat: `38.962018`,
         long: `-120.931663`
@@ -150,7 +150,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/tuol-lum.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/326`,
         flow: `https://www.dreamflows.com/graphs/day.090.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.oars.com/, https://www.sierramac.com/, http://zrafting.com`],
+        outfitters: [`https://www.aorafting.com/`, `https://www.arta.org/`, `https://www.oars.com/`, `https://www.sierramac.com/`, `http://zrafting.com`],
         takeout: `37.876458%2C-120.295745`,
         lat: `37.876458`,
         long: `-120.295745`
@@ -162,7 +162,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/mercd140.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/246`,
         flow: `https://www.dreamflows.com/graphs/day.225.php`,
-        outfitters: [`https://www.arta.org/, https://www.sierramac.com/, http://zrafting.com/`],
+        outfitters: [`https://www.arta.org/`, `https://www.sierramac.com/`, `http://zrafting.com/`],
         takeout: `37.604730%2C-119.967481`,
         lat: `37.604730`,
         long: `-119.967481`
@@ -174,7 +174,7 @@ const riverDescrip = [
         creekin: `This is a link to dreamflows description of the run`,
         awa: `This is a link to american whitewater`,
         flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
+        outfitters: `There are no outfitters for this run`,
         takeout: `This is the lat/long of the take-out`,
         lat: ``,
         long: ``
@@ -186,7 +186,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/tuol-up.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/325`,
         flow: `https://www.dreamflows.com/graphs/day.088.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.sierramac.com/`],
+        outfitters: [`https://www.aorafting.com/`, `https://www.sierramac.com/`],
         takeout: `37.835504%2C-120.055278`,
         lat: `37.835504`,
         long: `-120.055278`
@@ -198,7 +198,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/yuba-nfg.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/340`,
         flow: `https://www.dreamflows.com/graphs/day.057.php`,
-        outfitters: `https://whitewatertours.com/`,
+        outfitters: [`https://whitewatertours.com/`],
         takeout: `39.513355%2C-120.981418`,
         lat: `39.513355`,
         long: `-120.981418`

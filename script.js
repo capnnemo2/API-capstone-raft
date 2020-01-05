@@ -105,6 +105,7 @@ function displayPrivateInfo() {
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
+    $('#js-private-links').empty();
     $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.creekin}" target=”_blank” rel=”noopener noreferrer”>California Creeks</a></li>`);
     $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.awa}" target=”_blank” rel=”noopener noreferrer”>American Whitewater</a></li>`);
     $('#js-private-links').append(`<li>Current flow: <a href="${userRiverName.flow}" target=”_blank” rel=”noopener noreferrer”>Dreamflows</a></li>`);
@@ -119,9 +120,13 @@ function displayOutfitterInfo() {
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
-    // userRiverName.outfitters.forEach(function(link) {
-    //     $('js-outfitter-links').append(`<li><a href="${link}" target=”_blank” rel=”noopener noreferrer”>' + link + '</a></li>`)
-    // });
+
+    // each outfitter link should actually be an object with the outfitter name and the link so that it can display the name of the company and link to their site
+    const arrLinks = userRiverName.outfitters;
+    arrLinks.forEach(function(item) {
+        $('#js-outfitter-links').append(`<li><a href="${item}" target=”_blank” rel=”noopener noreferrer”>${item}</a></li>`);
+    });
+
     displayRiverInfo(userRiver);
     getWeather(userRiver);
 
@@ -142,16 +147,10 @@ function getLocation() {
     } else {
         $('#js-user-location').html = `Sorry, geolocation is not supported by this browser.`;
     }
-
-    // get take-out location (from array)
-
 }
 
 function getTomTom(position) {
     console.log(`ran getTomTom`);
-    console.log(position.coords.latitude);
-    console.log(position.coords.longitude);
-
     // for later:
     // find a way to trigger browser to ask for user location if they decline the first time
     // or catch the error to ask them for their
@@ -159,12 +158,9 @@ function getTomTom(position) {
 
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
-
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     const userRiverCoords = userRiverName.takeout;
-
-    $('#js-user-location').html("lat: " + lat + "<br>long: " + long);
 
     const getTravelTimeURL = `https://api.tomtom.com/routing/1/calculateRoute/${lat}%2C${long}%3A${userRiverCoords}/json?avoid=unpavedRoads&key=MmbpnXLGCMLejulVsu5VFZOlWUSUivGs`
     fetch(getTravelTimeURL)
@@ -223,36 +219,14 @@ function getWeather(userRiver) {
 
 function displayWeather(responseJson) {
     console.log(responseJson);
-    // $('#js-weather').html('Current weather at take-out:');
     const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
     const temp2 = Math.round((responseJson.main.feels_like - 273) * 9/5 + 32);
+    $('#js-weather-details').empty();
     $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather[0].main}</li>`);
     $('#js-weather-details').append(`<li>Temperature: ${temp}°F</li>`);
     $('#js-weather-details').append(`<li>Feels like: ${temp2}°F</li>`);
     $('#js-weather-details').append(`<li>Wind speed: ${responseJson.wind.speed} mph</li>`);
     $('#js-weather-details').append(`<img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon">`);
-
-
-}
-
-function getPrivateLinks() {
-    // access an array with links to dreamflows, ca creeks, american whitewater, a wet state for each river
-    
-    // call fn displayPrivateLinks()
-}
-
-function displayPrivateLinks() {
-
-}
-
-function getOutfitterLinks() {
-    // access an array with links to appropriate outfitters for each river
-
-    // call fn displayOutfitterLinks()
-}
-
-function displayOutfitterLinks() {
-    
 }
 
 
