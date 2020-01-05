@@ -107,12 +107,9 @@ function displayPrivateInfo() {
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     displayRiverInfo(userRiver);
-
-    // call fn getWeather()
     getWeather(userRiver);
 
-    // call fn getPrivateLinks()
-    // this fn will access a STORE-1 array with preset links to dreamflows, ca creeks, american whitewater, a wet state for each river
+    // call fn getPrivateLinks() - NOPE - use userRiver to display links from riverDescrip
 }
 
 function displayOutfitterInfo() {
@@ -120,18 +117,15 @@ function displayOutfitterInfo() {
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     displayRiverInfo(userRiver);
+    getWeather(userRiver);
 
-    // call fn getWeather()
-
-    // call fn getOutfitterLinks()
-    // this fn will access a STORE-2 array with preset links to appropriate companies for each river
+    // call fn getOutfitterLinks()  - NOPE - use userRiver to display links from riverDescrip
 }
 
 function displayRiverInfo(userRiver) {
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     $('#js-river-name').html(userRiverName.name);
     $('#js-river-descrip').html(userRiverName.description);
-
 }
 
 function getDirections() {
@@ -140,10 +134,19 @@ function getDirections() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
-        $('#js-user-location').html = `Geolocation is not supported by this browser.`;
+        $('#js-user-location').html = `Sorry, geolocation is not supported by this browser.`;
     }
 
     // get take-out location (from array)
+
+    tomtom.routing()
+        .locations()
+        .go().then(function(routeJson) {
+            let route = tomtom.L.geoJson(routeJson, {
+                style: {color: '#00d7ff', opacity: 0.6, weight: 6}
+            }).addTo(map);
+            map.fitBounds(route.getBounds(), {padding: [5, 5]});
+        });
 
 
     // tomtom.routing()
@@ -194,14 +197,11 @@ function getWeather(userRiver) {
     .catch(err => {
         $('#js-err-msg').text(`The weather gods are indecisive: ${err.message}. Please try again later.`)
     });
-   
-    // call fn displayWeather()
 }
 
 function displayWeather(responseJson) {
     console.log(responseJson);
     $('#js-weather').html('Current weather at take-out:');
-    // $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather.0.main}</li>`);
     const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
     const temp2 = Math.round((responseJson.main.feels_like - 273) * 9/5 + 32);
     $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather[0].main}</li>`);
