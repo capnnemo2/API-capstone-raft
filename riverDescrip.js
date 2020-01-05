@@ -98,42 +98,6 @@ const riverDescrip = [
         lat: `36.412747`,
         long: `-118.937156`
     },
-    // {
-    //     id: 'r8',
-    //     name: 'Kern River, Upper',
-    //     description: 'There are multiple different sections that can be run, depending on flows. At lower flows, the Limestone run offers the best class IV water.',
-    //     creekin: `http://cacreeks.com/kern-nf.htm`,
-    //     awa: `This is a link to american whitewater`,
-    //     flow: `This is a link to dreamflows current flow`,
-    //     outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
-    //     takeout: `This is the lat/long of the take-out`,
-    //     lat: ``,
-    //     long: ``
-    // },
-    // {
-    //     id: 'r9',
-    //     name: 'Kern River, Lower',
-    //     description: 'This is a description of the river',
-    //     creekin: `This is a link to dreamflows description of the run`,
-    //     awa: `This is a link to american whitewater`,
-    //     flow: `This is a link to dreamflows current flow`,
-    //     outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
-    //     takeout: `This is the lat/long of the take-out`,
-    //     lat: ``,
-    //     long: ``
-    // },
-    // {
-    //     id: 'r10',
-    //     name: 'Kern River, Forks of the Kern',
-    //     description: 'Granite slab canyon within Sequoia National Forest. Put-in access is via a three mile Forest Service trail. Pack animals are normally utilized to move gear for this run that is typically done in 2-3 days.',
-    //     creekin: `http://cacreeks.com/kern-fks.htm`,
-    //     awa: `This is a link to american whitewater`,
-    //     flow: `This is a link to dreamflows current flow`,
-    //     outfitters: `http://www.whitewatervoyages.com/kern-river-rafting/`,
-    //     takeout: `This is the lat/long of the take-out`,
-    //     lat: ``,
-    //     long: ``
-    // },
     {
         id: 'r11',
         name: 'North Fork of the American River',
@@ -197,18 +161,6 @@ const riverDescrip = [
         lat: `37.604730`,
         long: `-119.967481`
     },
-    // {
-    //     id: 'r15',
-    //     name: 'California Salmon River',
-    //     description: 'This is a description of the river',
-    //     creekin: `This is a link to dreamflows description of the run`,
-    //     awa: `This is a link to american whitewater`,
-    //     flow: `This is a link to dreamflows current flow`,
-    //     outfitters: `There are no outfitters for this run`,
-    //     takeout: `This is the lat/long of the take-out`,
-    //     lat: ``,
-    //     long: ``
-    // },
     {
         id: 'r16',
         name: 'Cherry Creek',

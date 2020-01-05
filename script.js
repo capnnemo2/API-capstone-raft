@@ -8,9 +8,7 @@ function displayRiverList() {
         $('input:checkbox').not(this).prop('checked', this.checked);
     });
 
-    // depending on which class checkboxes are selected, display the corresponding rivers
-
-    // surely these can all be expressed in a single loop, something like this?
+    // surely these can all be expressed in a single loop, something like this
     // for (let i = 1; i < 6; i++) {
     //     $('#js-class[i]').change(function() {
     //         if(this.checked != true) {
@@ -134,6 +132,7 @@ function displayOutfitterInfo() {
 }
 
 function displayRiverInfo(userRiver) {
+    console.log(`ran displayRiverInfo`);
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     $('#js-river-name').html(userRiverName.name);
     $('#js-river-descrip').html(userRiverName.description);
