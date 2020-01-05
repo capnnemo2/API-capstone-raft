@@ -121,16 +121,16 @@ function displayOutfitterInfo() {
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
 
-    // each outfitter link should actually be an object with the outfitter name and the link so that it can display the name of the company and link to their site
     const arrLinks = userRiverName.outfitters;
     arrLinks.forEach(function(item) {
-        $('#js-outfitter-links').append(`<li><a href="${item}" target=”_blank” rel=”noopener noreferrer”>${item}</a></li>`);
+        $('#js-outfitter-links').append(`<li><a href="${item.link}" target=”_blank” rel=”noopener noreferrer”>${item.name}</a></li>`);
     });
 
     displayRiverInfo(userRiver);
     getWeather(userRiver);
 
     $('#js-private').addClass('hidden');
+    $('#js-directions').addClass('hidden');
 }
 
 function displayRiverInfo(userRiver) {
@@ -178,6 +178,7 @@ function getTomTom(position) {
 
 function displayTomTom(responseJson) {
     console.log(responseJson);
+    $('#js-directions').show();
     const travelTime = responseJson.routes[0].summary.travelTimeInSeconds;
     const travelHours = Math.floor(travelTime / 3600);
     const travelMins = Math.floor((travelTime - (travelHours * 3600)) / 60);
