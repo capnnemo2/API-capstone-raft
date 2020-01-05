@@ -86,12 +86,12 @@ function watchForm() {
         event.preventDefault();
         const userTripType = $('input[name="tripType"]:checked').val();
         
-        // could declare userRiver here
-        // or create a separate function
+        // could declare userRiver and userRiverName here
+        // or create a separate function that could be called in each function where userRiver and userRiverName are currently being established repeatedly
 
         if (userTripType === 'private') {
             displayPrivateInfo();
-            getDirections();
+            getLocation();
         } else if (userTripType === 'outfitter') {
             displayOutfitterInfo();
         }
@@ -104,20 +104,28 @@ function displayPrivateInfo() {
     console.log(`ran displayPrivateInfo`);
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
+    const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
+    $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.creekin}" target=”_blank” rel=”noopener noreferrer”>California Creeks</a></li>`);
+    $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.awa}" target=”_blank” rel=”noopener noreferrer”>American Whitewater</a></li>`);
+    $('#js-private-links').append(`<li>Current flow: <a href="${userRiverName.flow}" target=”_blank” rel=”noopener noreferrer”>Dreamflows</a></li>`);
     displayRiverInfo(userRiver);
     getWeather(userRiver);
 
-    // call fn getPrivateLinks() - NOPE - use userRiver to display links from riverDescrip
+    $('#js-outfitter').addClass('hidden');
 }
 
 function displayOutfitterInfo() {
     console.log(`ran displayOutfitterInfo`);
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
+    const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
+    // userRiverName.outfitters.forEach(function(link) {
+    //     $('js-outfitter-links').append(`<li><a href="${link}" target=”_blank” rel=”noopener noreferrer”>' + link + '</a></li>`)
+    // });
     displayRiverInfo(userRiver);
     getWeather(userRiver);
 
-    // call fn getOutfitterLinks()  - NOPE - use userRiver to display links from riverDescrip
+    $('#js-private').addClass('hidden');
 }
 
 function displayRiverInfo(userRiver) {
@@ -126,13 +134,11 @@ function displayRiverInfo(userRiver) {
     $('#js-river-descrip').html(userRiverName.description);
 }
 
-function getDirections() {
-    // need to change this fn name since that is NOT what it does
-    console.log(`ran getDirections`);
-    // getDirections gets the user location
+function getLocation() {
+    console.log(`ran getLocation`);
 
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(displayDirections);
+        navigator.geolocation.getCurrentPosition(getTomTom);
     } else {
         $('#js-user-location').html = `Sorry, geolocation is not supported by this browser.`;
     }
@@ -141,10 +147,8 @@ function getDirections() {
 
 }
 
-function displayDirections(position) {
-    // need to change this fn name since that is NOT what it does
-    // this function WILL display the travel time and distance to the take-out
-    console.log(`ran displayDirections`);
+function getTomTom(position) {
+    console.log(`ran getTomTom`);
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
 

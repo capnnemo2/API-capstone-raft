@@ -7,7 +7,7 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/4538`,
         flow: `https://www.dreamflows.com/graphs/day.076.php`,
         outfitters: `There are no outfitters for this run.`,
-        takeout: `38.566566,-121.383601`,
+        takeout: `38.566566%2C-121.383601`,
         lat: `38.566566`,
         long: `-121.38360`
     },
@@ -18,7 +18,7 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/5117`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
         takeout: `38.826396%2C-120.949185`,
         lat: `38.826396`,
         long: `-120.949185`
@@ -30,10 +30,10 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/148`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        takeout: `38.805789%2C-120.894110`,
+        lat: `38.805789`,
+        long: `-120.894110`
     },
     {
         id: 'r4',
@@ -42,10 +42,10 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/4068`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        takeout: `38.772974%2C-121.035074`,
+        lat: `38.772974`,
+        long: `-121.035074`
     },
     {
         id: 'r5',
@@ -55,9 +55,9 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/322/`,
         flow: `https://www.dreamflows.com/graphs/day.165.php`,
         outfitters: `https://whitewatertours.com/`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        takeout: `39.419932%2C-120.031325`,
+        lat: `39.419932`,
+        long: `-120.031325`
     },
     {
         id: 'r6',
@@ -67,9 +67,9 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/212/`,
         flow: `https://www.dreamflows.com/graphs/day.103.php`,
         outfitters: `http://kaweah-whitewater.com/`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        takeout: `36.438346%2C-118.906004`,
+        lat: `36.438346`,
+        long: `-118.906004`
     },
     {
         id: 'r7',
@@ -79,9 +79,9 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/210/`,
         flow: `https://www.dreamflows.com/graphs/day.103.php`,
         outfitters: `http://kaweah-whitewater.com/`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        takeout: `36.412747%2C-118.937156`,
+        lat: `36.412747`,
+        long: `-118.937156`
     },
     {
         id: 'r8',
@@ -127,9 +127,9 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/139`,
         flow: `https://www.dreamflows.com/graphs/day.069.php`,
         outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        takeout: `39.000074%2C-120.939647`,
+        lat: `39.000074`,
+        long: `-120.939647`
     },
     {
         id: 'r12',
@@ -138,34 +138,34 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-mf1.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/136`,
         flow: `https://www.dreamflows.com/graphs/day.070.php`,
-        outfitters: [`https://www.aorafting.com/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.malode.com/, https://www.oars.com/, https://whitewatertours.com/`],
+        takeout: `38.962018%2C-120.931663`,
+        lat: `38.962018`,
+        long: `-120.931663`
     },
     {
         id: 'r13',
         name: 'Tuolumne River',
         description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        creekin: `http://cacreeks.com/tuol-lum.htm`,
+        awa: `https://www.americanwhitewater.org/content/River/detail/id/326`,
+        flow: `https://www.dreamflows.com/graphs/day.090.php`,
+        outfitters: [`https://www.aorafting.com/, https://www.arta.org/, https://www.oars.com/, https://www.sierramac.com/, http://zrafting.com`],
+        takeout: `37.876458%2C-120.295745`,
+        lat: `37.876458`,
+        long: `-120.295745`
     },
     {
         id: 'r14',
         name: 'Merced River',
         description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        creekin: `http://cacreeks.com/mercd140.htm`,
+        awa: `https://www.americanwhitewater.org/content/River/detail/id/246`,
+        flow: `https://www.dreamflows.com/graphs/day.225.php`,
+        outfitters: [`https://www.arta.org/, https://www.sierramac.com/, http://zrafting.com/`],
+        takeout: `37.604730%2C-119.967481`,
+        lat: `37.604730`,
+        long: `-119.967481`
     },
     {
         id: 'r15',
@@ -183,13 +183,13 @@ const riverDescrip = [
         id: 'r16',
         name: 'Cherry Creek',
         description: 'This is a description of the river',
-        creekin: `This is a link to dreamflows description of the run`,
-        awa: `This is a link to american whitewater`,
-        flow: `This is a link to dreamflows current flow`,
-        outfitters: `There are no outfitters for this run because it is just a float.`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        creekin: `http://cacreeks.com/tuol-up.htm`,
+        awa: `https://www.americanwhitewater.org/content/River/detail/id/325`,
+        flow: `https://www.dreamflows.com/graphs/day.088.php`,
+        outfitters: [`https://www.aorafting.com/, https://www.sierramac.com/`],
+        takeout: `37.835504%2C-120.055278`,
+        lat: `37.835504`,
+        long: `-120.055278`
     },
     {
         id: 'r17',
@@ -199,9 +199,9 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/340`,
         flow: `https://www.dreamflows.com/graphs/day.057.php`,
         outfitters: `https://whitewatertours.com/`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        takeout: `39.513355%2C-120.981418`,
+        lat: `39.513355`,
+        long: `-120.981418`
     },
     {
         id: 'r18',
@@ -211,8 +211,8 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/162`,
         flow: `https://www.dreamflows.com/graphs/day.108.php`,
         outfitters: `There are no outfitters for this run.`,
-        takeout: `This is the lat/long of the take-out`,
-        lat: ``,
-        long: ``
+        takeout: `38.868280%2C-119.692603`,
+        lat: `38.868280`,
+        long: `-119.692603`
     }
 ]
