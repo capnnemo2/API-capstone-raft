@@ -26,7 +26,7 @@ const riverDescrip = [
     {
         id: 'r3',
         name: 'South Fork of the American River, Upper',
-        description: 'Dependable flows through Spring and Summer, weekend flows all year. Meatgrinder Rapid (III) gets your heart pumping immediately and Troublemaker (III)sends you into Marshall Gold Discovery State Park. Because of those two rapids, this run is considered slightly more challenging than the SFA, Lower run.',
+        description: 'Dependable flows through Spring and Summer, weekend flows all year. Meatgrinder Rapid (III) gets your heart pumping immediately and Troublemaker (III) sends you into Marshall Gold Discovery State Park. Because of those two rapids, this run is considered slightly more challenging than the SFA, Lower run.',
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/148`,
         flow: `https://www.dreamflows.com/graphs/day.075.php`,

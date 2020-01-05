@@ -84,18 +84,16 @@ function watchForm() {
     $('form').submit(event => {
         console.log(`ran watchForm`);
         event.preventDefault();
-        // create a variable to store private vs outfitter
         const userTripType = $('input[name="tripType"]:checked').val();
         
-        
+        // could declare userRiver here
+        // or create a separate function
 
         if (userTripType === 'private') {
             displayPrivateInfo();
             getDirections();
-            //  - call fn getWeather()
         } else if (userTripType === 'outfitter') {
             displayOutfitterInfo();
-            //  - call fn getWeather()
         }
 
     });
@@ -129,12 +127,12 @@ function displayRiverInfo(userRiver) {
 }
 
 function getDirections() {
+    // need to change this fn name since that is NOT what it does
     console.log(`ran getDirections`);
     // getDirections gets the user location
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(displayDirections);
-        // change above line: replace showPosition to displayDirections to change the success outcome
     } else {
         $('#js-user-location').html = `Sorry, geolocation is not supported by this browser.`;
     }
@@ -143,30 +141,28 @@ function getDirections() {
 
 }
 
-// function showPosition(position) {
-//     console.log(`ran showPosition`);
-//     $('#js-user-location').html("lat: " + position.coords.latitude + "<br>long: " + position.coords.longitude);
-//     console.log(position);
-//     console.log(position.coords.latitude);
-//     console.log(position.coords.longitude);
-// }
-
 function displayDirections(position) {
-    // this function will display the travel time and distance to the take-out
+    // need to change this fn name since that is NOT what it does
+    // this function WILL display the travel time and distance to the take-out
     console.log(`ran displayDirections`);
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
+
+    // for later:
+    // find a way to trigger browser to ask for user location if they decline the first time
+    // or catch the error to ask them for their
+    // if location denied, promt user
 
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
 
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
-    const userRiverCoords = userRiver.takeout;
+    const userRiverCoords = userRiverName.takeout;
 
     $('#js-user-location').html("lat: " + lat + "<br>long: " + long);
 
-    const getTravelTimeURL = `https://api.tomtom.com/routing/1/calculateRoute/${lat}%2C${long}%3A${userRiverCoords}38.0051456%2C-121.2973056%3A38.826396%2C-120.949185/json?avoid=unpavedRoads&key=MmbpnXLGCMLejulVsu5VFZOlWUSUivGs`
+    const getTravelTimeURL = `https://api.tomtom.com/routing/1/calculateRoute/${lat}%2C${long}%3A${userRiverCoords}/json?avoid=unpavedRoads&key=MmbpnXLGCMLejulVsu5VFZOlWUSUivGs`
     fetch(getTravelTimeURL)
     .then(response => {
         if(response.ok) {
@@ -174,11 +170,26 @@ function displayDirections(position) {
         }
         throw new Error(response.statusText);
     })
-    .then(responseJson => console.log(responseJson))
+    .then(responseJson => displayTomTom(responseJson))
     .catch(err => {
-        $('#js-directions-err-msg').text(`TomTom threw a temper tantrum and ${err.message}. Please try again in a few moments.`);
+        $('#js-directions-err-msg').text(`TomTom threw a temper tantrum. Please try again in a few moments.`);
     });
-    
+}
+
+function displayTomTom(responseJson) {
+    console.log(responseJson);
+    const travelTime = responseJson.routes[0].summary.travelTimeInSeconds;
+    const travelHours = Math.floor(travelTime / 3600);
+    const travelMins = Math.floor((travelTime - (travelHours * 3600)) / 60);
+    $('#js-travel-time').html(`Travel time from your current location to the take-out: ${travelHours} hour(s) and ${travelMins} minute(s).`);
+
+    const travelDistance = responseJson.routes[0].summary.lengthInMeters;
+    const distanceMiles = Math.round(travelDistance / 1609);
+    $('#js-travel-distance').html(`Approximate distance to take-out from your current location: ${distanceMiles} miles.`)
+
+    const rawETA = responseJson.routes[0].summary.arrivalTime;
+    const ETA = rawETA.slice(11, 16);
+    $('#js-eta').html(`Estimated time of arrival at take-out if departure is immediate: ${ETA}`)
 
 }
 
@@ -208,7 +219,7 @@ function getWeather(userRiver) {
 
 function displayWeather(responseJson) {
     console.log(responseJson);
-    $('#js-weather').html('Current weather at take-out:');
+    // $('#js-weather').html('Current weather at take-out:');
     const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
     const temp2 = Math.round((responseJson.main.feels_like - 273) * 9/5 + 32);
     $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather[0].main}</li>`);
