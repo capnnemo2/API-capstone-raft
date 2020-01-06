@@ -2,12 +2,12 @@
 
 
 function displayRiverList() {
-    // this part of the function should allow the 'all' checkbox to de/select all. and it works!
     console.log(`ran displayRiverList`);
     $('#js-check-all').click(function() {
         $('input:checkbox').not(this).prop('checked', this.checked);
     });
 
+    // for later:
     // surely these can all be expressed in a single loop, something like this
     // for (let i = 1; i < 6; i++) {
     //     $('#js-class[i]').change(function() {
@@ -18,7 +18,6 @@ function displayRiverList() {
     //         }
     //     });
     // }
-
     $('#js-class1').change(function() {
         if(this.checked != true) {
             $('#js-class1-rivers').hide();
@@ -26,7 +25,6 @@ function displayRiverList() {
             $('#js-class1-rivers').show();
         }
     });
-
     $('#js-class2').change(function() {
         if(this.checked != true) {
             $('#js-class2-rivers').hide();
@@ -34,7 +32,6 @@ function displayRiverList() {
             $('#js-class2-rivers').show();
         }
     });
-
     $('#js-class3').change(function() {
         if(this.checked != true) {
             $('#js-class3-rivers').hide();
@@ -42,7 +39,6 @@ function displayRiverList() {
             $('#js-class3-rivers').show();
         }
     });
-
     $('#js-class4').change(function() {
         if(this.checked != true) {
             $('#js-class4-rivers').hide();
@@ -50,7 +46,6 @@ function displayRiverList() {
             $('#js-class4-rivers').show();
         }
     });
-
     $('#js-class5').change(function() {
         if(this.checked != true) {
             $('#js-class5-rivers').hide();
@@ -59,6 +54,8 @@ function displayRiverList() {
         }
     });
 
+    // for later:
+    // again, this could be a loop
     $('#js-check-all').change(function() {
         if(this.checked != true) {
             $('#js-class1-rivers').hide();
@@ -74,7 +71,6 @@ function displayRiverList() {
             $('#js-class5-rivers').show();
         }
     });
-
     watchForm();
 }
 
@@ -84,6 +80,7 @@ function watchForm() {
         event.preventDefault();
         const userTripType = $('input[name="tripType"]:checked').val();
         
+        // for later:
         // could declare userRiver and userRiverName here
         // or create a separate function that could be called in each function where userRiver and userRiverName are currently being established repeatedly
 
@@ -93,7 +90,6 @@ function watchForm() {
         } else if (userTripType === 'outfitter') {
             displayOutfitterInfo();
         }
-
     });
 }
 
@@ -104,22 +100,17 @@ function displayPrivateInfo() {
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     $('#js-private-links').empty();
-
     if($('#js-private').hasClass('hidden')) {
         $('#js-private').removeClass('hidden');
     }
-
     if($('#js-directions').hasClass('hidden')) {
         $('#js-directions').removeClass('hidden');
     }
-
     $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.creekin}" target=”_blank” rel=”noopener noreferrer”>California Creeks</a></li>`);
     $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.awa}" target=”_blank” rel=”noopener noreferrer”>American Whitewater</a></li>`);
     $('#js-private-links').append(`<li>Current flow: <a href="${userRiverName.flow}" target=”_blank” rel=”noopener noreferrer”>Dreamflows</a></li>`);
     displayRiverInfo(userRiver);
     getWeather(userRiver);
-
-
     $('#js-outfitter').addClass('hidden');
 }
 
@@ -128,21 +119,16 @@ function displayOutfitterInfo() {
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
-
     if($('#js-outfitter').hasClass('hidden')) {
         $('#js-outfitter').removeClass('hidden');
     }
-
     $('#js-outfitter-links').empty();
-
     const arrLinks = userRiverName.outfitters;
     arrLinks.forEach(function(item) {
         $('#js-outfitter-links').append(`<li><a href="${item.link}" target=”_blank” rel=”noopener noreferrer”>${item.name}</a></li>`);
     });
-
     displayRiverInfo(userRiver);
     getWeather(userRiver);
-
     $('#js-private').addClass('hidden');
     $('#js-directions').addClass('hidden');
 }
@@ -156,7 +142,6 @@ function displayRiverInfo(userRiver) {
 
 function getLocation() {
     console.log(`ran getLocation`);
-
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getTomTom);
     } else {
@@ -164,19 +149,17 @@ function getLocation() {
     }
 }
 
-function getTomTom(position) {
-    console.log(`ran getTomTom`);
     // for later:
     // find a way to trigger browser to ask for user location if they decline the first time
     // or catch the error to ask them for their
     // if location denied, promt user
-
+function getTomTom(position) {
+    console.log(`ran getTomTom`);
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     const userRiverCoords = userRiverName.takeout;
-
     const getTravelTimeURL = `https://api.tomtom.com/routing/1/calculateRoute/${lat}%2C${long}%3A${userRiverCoords}/json?avoid=unpavedRoads&key=MmbpnXLGCMLejulVsu5VFZOlWUSUivGs`
     fetch(getTravelTimeURL)
     .then(response => {
@@ -193,25 +176,20 @@ function getTomTom(position) {
 
 function displayTomTom(responseJson) {
     console.log(responseJson);
-    $('#js-directions').show();
     const travelTime = responseJson.routes[0].summary.travelTimeInSeconds;
     const travelHours = Math.floor(travelTime / 3600);
     const travelMins = Math.floor((travelTime - (travelHours * 3600)) / 60);
     $('#js-travel-time').html(`Travel time from your current location to the take-out: ${travelHours} hour(s) and ${travelMins} minute(s).`);
-
     const travelDistance = responseJson.routes[0].summary.lengthInMeters;
     const distanceMiles = Math.round(travelDistance / 1609);
     $('#js-travel-distance').html(`Approximate distance to take-out from your current location: ${distanceMiles} miles.`)
-
     const rawETA = responseJson.routes[0].summary.arrivalTime;
     const ETA = rawETA.slice(11, 16);
     $('#js-eta').html(`Estimated time of arrival at take-out if departure is immediate: ${ETA}`)
-
 }
 
 function getWeather(userRiver) {
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
-    
     const weatherURL = 'https://api.openweathermap.org/data/2.5/weather';
     const latitude = Math.round(`${userRiverName.lat}`);
     const longitude = Math.round(`${userRiverName.long}`);
@@ -219,7 +197,6 @@ function getWeather(userRiver) {
     const weatherApiKey = `appid=f83705c417eaaaa1cacb48b69b90c169`;
     const searchWeatherURL = weatherURL + '?' + queryString + '&' + weatherApiKey;
     console.log(searchWeatherURL);
-
     fetch(searchWeatherURL)
     .then(response => {
         if(response.ok) {
