@@ -104,11 +104,21 @@ function displayPrivateInfo() {
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     $('#js-private-links').empty();
+
+    if($('#js-private').hasClass('hidden')) {
+        $('#js-private').removeClass('hidden');
+    }
+
+    if($('#js-directions').hasClass('hidden')) {
+        $('#js-directions').removeClass('hidden');
+    }
+
     $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.creekin}" target=”_blank” rel=”noopener noreferrer”>California Creeks</a></li>`);
     $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.awa}" target=”_blank” rel=”noopener noreferrer”>American Whitewater</a></li>`);
     $('#js-private-links').append(`<li>Current flow: <a href="${userRiverName.flow}" target=”_blank” rel=”noopener noreferrer”>Dreamflows</a></li>`);
     displayRiverInfo(userRiver);
     getWeather(userRiver);
+
 
     $('#js-outfitter').addClass('hidden');
 }
@@ -118,6 +128,12 @@ function displayOutfitterInfo() {
     $('#results').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
+
+    if($('#js-outfitter').hasClass('hidden')) {
+        $('#js-outfitter').removeClass('hidden');
+    }
+
+    $('#js-outfitter-links').empty();
 
     const arrLinks = userRiverName.outfitters;
     arrLinks.forEach(function(item) {
