@@ -6,7 +6,9 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/amer-low.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/4538`,
         flow: `https://www.dreamflows.com/graphs/day.076.php`,
-        outfitters: `There are no outfitters for this run.`,
+        outfitters: [
+            {link: `https://raftrentals.com/`, name: `American River Raft Rentals`}
+        ]`There are no outfitters for this run.`,
         takeout: `38.566566%2C-121.383601`,
         lat: `38.566566`,
         long: `-121.38360`
