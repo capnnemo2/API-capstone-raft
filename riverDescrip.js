@@ -7,8 +7,7 @@ const riverDescrip = [
         awa: `https://www.americanwhitewater.org/content/River/detail/id/4538`,
         flow: `https://www.dreamflows.com/graphs/day.076.php`,
         outfitters: [
-            {link: `https://raftrentals.com/`, name: `American River Raft Rentals`}
-        ]`There are no outfitters for this run.`,
+            {link: `https://raftrentals.com/`, name: `American River Raft Rentals`}],
         takeout: `38.566566%2C-121.383601`,
         lat: `38.566566`,
         long: `-121.38360`
@@ -197,7 +196,9 @@ const riverDescrip = [
         creekin: `http://cacreeks.com/carson-e.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/162`,
         flow: `https://www.dreamflows.com/graphs/day.108.php`,
-        outfitters: `There are no outfitters for this run.`,
+        outfitters: [
+            {link: `https://raftcalifornia.com/`, name: `Raft California`}
+        ],
         takeout: `38.868280%2C-119.692603`,
         lat: `38.868280`,
         long: `-119.692603`
