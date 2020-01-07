@@ -8,9 +8,10 @@ function displayRiverList() {
     });
 
     // for later:
-    // surely these can all be expressed in a single loop, something like this
-    // for (let i = 1; i < 6; i++) {
-    //     $('#js-class[i]').change(function() {
+    // surely these can all be expressed in a single loop, something like this?
+    // let elements = document.querySelectorAll('input[type=checkbox]');
+    // for (let i = 0; i < elements.length; i++) {
+    //     elements[i].change(function() {
     //         if(this.checked != true) {
     //             $('#js-class[i]-rivers').hide();
     //         } else {
@@ -18,44 +19,65 @@ function displayRiverList() {
     //         }
     //     });
     // }
+
     $('#js-class1').change(function() {
         if(this.checked != true) {
             $('#js-class1-rivers').hide();
+            // $('#js-choose-header').hide();
+            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class1-rivers').show();
+            // $('#js-choose-header').show();
+            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class2').change(function() {
         if(this.checked != true) {
             $('#js-class2-rivers').hide();
+            // $('#js-choose-header').hide();
+            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class2-rivers').show();
+            // $('#js-choose-header').show();
+            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class3').change(function() {
         if(this.checked != true) {
             $('#js-class3-rivers').hide();
+            // $('#js-choose-header').hide();
+            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class3-rivers').show();
+            // $('#js-choose-header').show();
+            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class4').change(function() {
         if(this.checked != true) {
             $('#js-class4-rivers').hide();
+            // $('#js-choose-header').hide();
+            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class4-rivers').show();
+            // $('#js-choose-header').show();
+            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class5').change(function() {
         if(this.checked != true) {
             $('#js-class5-rivers').hide();
+            // $('#js-choose-header').hide();
+            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class5-rivers').show();
+            // $('#js-choose-header').show();
+            // $('#js-get-info-btn').show();
         }
     });
 
     // for later:
-    // again, this could be a loop
+    // again, this could be a loop?
     $('#js-check-all').change(function() {
         if(this.checked != true) {
             $('#js-class1-rivers').hide();
@@ -63,14 +85,29 @@ function displayRiverList() {
             $('#js-class3-rivers').hide();
             $('#js-class4-rivers').hide();
             $('#js-class5-rivers').hide();
+            // $('#js-choose-header').hide();
+            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class1-rivers').show();
             $('#js-class2-rivers').show();
             $('#js-class3-rivers').show();
             $('#js-class4-rivers').show();
             $('#js-class5-rivers').show();
+            // $('#js-choose-header').show();
+            // $('#js-get-info-btn').show();
         }
     });
+
+    // the below doesn't work because it lacks the .change(function()) of the above code?
+    // if($('#js-class1').checked != true || $('#js-class2').checked != true || $('#js-class3').checked != true || $('#js-class4').checked != true || $('#js-class5').checked != true || $('#js-check-all').checked != true) {
+    //     $('#js-choose-header').hide();
+    //     $('#js-get-info-btn').hide();
+    // } else {
+    //     $('#js-choose-header').show();
+    //     $('#js-get-info-btn').show();
+    // }
+
+
     watchForm();
 }
 
@@ -106,9 +143,9 @@ function displayPrivateInfo() {
     if($('#js-directions').hasClass('hidden')) {
         $('#js-directions').removeClass('hidden');
     }
-    $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.creekin}" target=”_blank” rel=”noopener noreferrer”>California Creeks</a></li>`);
-    $('#js-private-links').append(`<li>Run beta: <a href="${userRiverName.awa}" target=”_blank” rel=”noopener noreferrer”>American Whitewater</a></li>`);
-    $('#js-private-links').append(`<li>Current flow: <a href="${userRiverName.flow}" target=”_blank” rel=”noopener noreferrer”>Dreamflows</a></li>`);
+    $('#js-private-links').append(`<li>Beta: <a href="${userRiverName.creekin}" target=”_blank” rel=”noopener noreferrer”>California Creeks</a></li>`);
+    $('#js-private-links').append(`<li>Beta: <a href="${userRiverName.awa}" target=”_blank” rel=”noopener noreferrer”>American Whitewater</a></li>`);
+    $('#js-private-links').append(`<li>Flow: <a href="${userRiverName.flow}" target=”_blank” rel=”noopener noreferrer”>Dreamflows</a></li>`);
     displayRiverInfo(userRiver);
     getWeather(userRiver);
     $('#js-outfitter').addClass('hidden');
@@ -179,13 +216,13 @@ function displayTomTom(responseJson) {
     const travelTime = responseJson.routes[0].summary.travelTimeInSeconds;
     const travelHours = Math.floor(travelTime / 3600);
     const travelMins = Math.floor((travelTime - (travelHours * 3600)) / 60);
-    $('#js-travel-time').html(`Travel time from your current location to the take-out: ${travelHours} hour(s) and ${travelMins} minute(s).`);
+    $('#js-travel-time').html(`<span class="travel">Time to get to take-out</span><br>${travelHours} hr and ${travelMins} min`);
     const travelDistance = responseJson.routes[0].summary.lengthInMeters;
     const distanceMiles = Math.round(travelDistance / 1609);
-    $('#js-travel-distance').html(`Approximate distance to take-out from your current location: ${distanceMiles} miles.`)
+    $('#js-travel-distance').html(`<span class="travel">Distance to take-out</span><br>${distanceMiles} miles`)
     const rawETA = responseJson.routes[0].summary.arrivalTime;
     const ETA = rawETA.slice(11, 16);
-    $('#js-eta').html(`Estimated time of arrival at take-out if departure is immediate: ${ETA}`)
+    $('#js-eta').html(`<span class="travel">Take-out ETA</span><br>${ETA}`)
 }
 
 function getWeather(userRiver) {
@@ -213,13 +250,22 @@ function getWeather(userRiver) {
 function displayWeather(responseJson) {
     console.log(responseJson);
     const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
+
+    // maybe don't need feels like temp
     const temp2 = Math.round((responseJson.main.feels_like - 273) * 9/5 + 32);
     $('#js-weather-details').empty();
-    $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather[0].main}</li>`);
-    $('#js-weather-details').append(`<li>Temperature: ${temp}°F</li>`);
-    $('#js-weather-details').append(`<li>Feels like: ${temp2}°F</li>`);
-    $('#js-weather-details').append(`<li>Wind speed: ${responseJson.wind.speed} mph</li>`);
-    $('#js-weather-details').append(`<img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon">`);
+
+    const wind = Math.round((responseJson.wind.speed));
+
+    // $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather[0].main}</li>`);
+    // $('#js-weather-details').append(`<li>Temperature: ${temp}°F</li>`);
+    // $('#js-weather-details').append(`<li>Feels like: ${temp2}°F</li>`);
+    // $('#js-weather-details').append(`<li>Wind: ${responseJson.wind.speed} mph</li>`);
+    // $('#js-weather-details').append(`<img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon">`);
+
+    $('#js-weather-details').append(
+        `<div class="float"><img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon"></div><div class="weather-info"><p class="weather-blurb">${temp}°F</p><p class="weather-blurb">${responseJson.weather[0].main}</p><p class="weather-blurb">Wind: ${wind} mph</p></div>`);
+
 }
 
 

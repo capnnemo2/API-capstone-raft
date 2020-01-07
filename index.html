@@ -9,8 +9,11 @@
     <title>California Whitewater</title>
 </head>
 <body>
-    <h1>California Whitewater Rivers</h1>
-    <p>A collection of popular rivers in California for whitewater rafting. Whether you're organizing a private trip or looking for an outfitter, you can find all the information you need here.</p>
+    <header>
+        <h1>California Whitewater Rivers</h1>
+        <p>A collection of popular rivers in California for whitewater rafting. Whether you're organizing a private trip or looking for an outfitter, you can find all the information you need here.</p>
+    </header>
+    
 
     <form id="js-form">
 
@@ -18,9 +21,10 @@
 
         <label><input type="radio" name="tripType" value="private" required>Private trip</label><br>
         <label><input type="radio" name="tripType" value="outfitter" required>Outfitter trip</label><br>
+        
 
         <h2>What class are you qualified and looking for?</h2>
-
+<!-- when you choose a class: the screen should adjust so that the get info button is visible at the bottom -->
         <label><input id="js-class1" type="checkbox" name="classRapids" value="1">I</label>
         <label><input id="js-class2" type="checkbox" name="classRapids" value="2">II</label>
         <label><input id="js-class3" type="checkbox" name="classRapids" value="3">III</label>
@@ -28,8 +32,8 @@
         <label><input id="js-class5" type="checkbox" name="classRapids" value="5">V</label>
         <label><input id="js-check-all" type="checkbox" name="classRapids">All</label>
 
-        <!-- this header should also be hidden until rivers are listed -->
-        <h2>Choose a river to get more information</h2>
+        <!-- this header should be hidden until rivers are listed -->
+        <h2 id="js-choose-header">Choose a river to get more information</h2>
         
         <section>
 
@@ -38,20 +42,20 @@
             </div>
     
             <div id="js-class2-rivers" class="class2 hidden">
-                <label><input type="radio" name="riverName" value="r2" required>South Fork of the American River, C2G</label><br>
-                <label><input type="radio" name="riverName" value="r18" required>East Fork of the Carson River</label><br>
+                <label><input type="radio" name="riverName" value="r2" required>South Fork American River, C2G</label><br>
+                <label><input type="radio" name="riverName" value="r18" required>East Fork Carson River</label><br>
             </div>
     
             <div id="js-class3-rivers" class="class3 hidden">
-                <label><input type="radio" name="riverName" value="r3" required>South Fork of the American River, Upper</label><br>
-                <label><input type="radio" name="riverName" value="r4" required>South Fork of the American River, Lower</label><br>
+                <label><input type="radio" name="riverName" value="r3" required>South Fork American River, Upper</label><br>
+                <label><input type="radio" name="riverName" value="r4" required>South Fork American River, Lower</label><br>
                 <label><input type="radio" name="riverName" value="r5" required>Truckee River</label><br>
                 <label><input type="radio" name="riverName" value="r7" required>Kaweah River, Lower</label><br>
             </div>
     
             <div id="js-class4-rivers" class="class4 hidden">
-                <label><input type="radio" name="riverName" value="r11" required>North Fork of the American River</label><br>
-                <label><input type="radio" name="riverName" value="r12" required>Middle Fork of the American River</label><br>
+                <label><input type="radio" name="riverName" value="r11" required>North Fork American River</label><br>
+                <label><input type="radio" name="riverName" value="r12" required>Middle Fork American River</label><br>
                 <label><input type="radio" name="riverName" value="r13" required>Tuolumne River</label><br>
                 <label><input type="radio" name="riverName" value="r14" required>Merced River</label><br>
                 <label><input type="radio" name="riverName" value="r6" required>Kaweah River, Upper</label><br>
@@ -59,52 +63,66 @@
     
             <div id="js-class5-rivers" class="class5 hidden">
                 <label><input type="radio" name="riverName" value="r16" required>Cherry Creek</label><br>
-                <label><input type="radio" name="riverName" value="r17" required>North Fork of the Yuba River</label><br>
+                <label><input type="radio" name="riverName" value="r17" required>North Fork Yuba River</label><br>
             </div>
     
         </section>
         
               
         <!-- this button should be hidden until rivers are listed -->
-        <input type="submit" value="Get info">
+        <div class="btn">
+            <input type="submit" value="Get info" id="js-get-info-btn">
+        </div>
+        
 
     </form>
 
-    <hr>
+    
     <p id="js-err-msg" class="err-msg"></p>
 
     <!-- when we go live there should be a js autoscroll down to the results section -->
     <section id="results" class="hidden">
-        <hr>
-        <h2 id="js-river-name"></h2>
+        
+        <div class="result-block">
+            <h2 id="js-river-name"></h2>
+            <p id="js-river-descrip"></p>
+        </div>
+        
 
-        <p id="js-river-descrip"></p>
-
-        <div id="js-private">
-            <h3>Here are some useful links to get more information:</h3>
+        <div id="js-private" class="result-block">
+            <h3>Here are some useful links to get more information</h3>
             <ul id="js-private-links">
             </ul>
         </div>
         
-        <div id="js-outfitter">
-            <h3>Here are a few outfitters that run this river:</h3>
+        <div id="js-outfitter" class="result-block">
+            <h3>Here are a few outfitters that run this river</h3>
             <ul id="js-outfitter-links">
             </ul>
         </div>
 
-        <div>
+        <!-- <div class="result-block">
             <h3 id="js-weather">Current weather at take-out:</h3>
             <ul id="js-weather-details">
             </ul>
-        </div>
+        </div> -->
+
+        <div class="result-block">
+                <h3 id="js-weather">Weather at take-out</h3>
+                <div id="js-weather-details">
+                </div>
+            </div>
         
-        <div id="js-directions">
-            <h3>Travel information:</h3>
-            <p id="js-user-location"></p>
+        <div id="js-directions" class="result-block">
+            <h3>Travel information</h3>
             <p id="js-directions-err-msg" class="err-msg"></p>
             <p id="js-travel-time"></p>
             <p id="js-travel-distance"></p>
             <p id="js-eta"></p>
+        </div>
+
+        <div id="another-river">
+            <a href="#js-form">Check another river</a>
         </div>
     </section>
 

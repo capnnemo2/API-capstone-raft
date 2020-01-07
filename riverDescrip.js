@@ -14,7 +14,7 @@ const riverDescrip = [
     },
     {
         id: 'r2',
-        name: 'South Fork of the American River, Coloma to Greenwood',
+        name: 'South Fork American River, Coloma to Greenwood',
         description: 'Dependable flows through Spring and Summer, weekend flows all year. Put-in at Marshall Gold Discovery State Park, take-out at Greenwood Creek. Class I and II rapids are interspersed with calm, scenic stretches. The last rapid on the run, Highway Rapid (II+), is the longest and one of the most challenging rapids.',
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/5117`,
@@ -30,7 +30,7 @@ const riverDescrip = [
     },
     {
         id: 'r3',
-        name: 'South Fork of the American River, Upper',
+        name: 'South Fork American River, Upper',
         description: 'Dependable flows through Spring and Summer, weekend flows all year. Meatgrinder Rapid (III) gets your heart pumping immediately and Troublemaker (III) sends you into Marshall Gold Discovery State Park. Because of those two rapids, this run is considered slightly more challenging than the SFA, Lower run.',
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/148`,
@@ -46,7 +46,7 @@ const riverDescrip = [
     },
     {
         id: 'r4',
-        name: 'South Fork of the American River, Lower',
+        name: 'South Fork American River, Lower',
         description: `Dependable flows through Spring and Summer, weekend flows all year. Considered slightly less challenging than the SFA, Upper run. Notable rapids inclue Fowler's Rock (III), Satan's Cesspool (III), and Hospital Bar (III).`,
         creekin: `http://cacreeks.com/amer-sf.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/4068`,
@@ -101,7 +101,7 @@ const riverDescrip = [
     },
     {
         id: 'r11',
-        name: 'North Fork of the American River',
+        name: 'North Fork American River',
         description: 'A classic run beginning with several miles of class IV water before mellowing out in scenic class II. Chamberlain Falls (IV) and Bogus Thunder (IV), which merits a scout, are highlights.',
         creekin: `http://cacreeks.com/amer-nch.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/139`,
@@ -117,7 +117,7 @@ const riverDescrip = [
     },
     {
         id: 'r12',
-        name: 'Middle Fork of the American River',
+        name: 'Middle Fork American River',
         description: 'The first significant rapid, Tunnel Chute (IV+), runs through a man-made tunnel. A relaxing class II section in the middle before the Ruck-a-Chucky (VI) portage. The end of the run consists of a string of class IV rapids in quick succession.',
         creekin: `http://cacreeks.com/amer-mf1.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/136`,
@@ -178,7 +178,7 @@ const riverDescrip = [
     },
     {
         id: 'r17',
-        name: 'North Fork of the Yuba River',
+        name: 'North Fork Yuba River',
         description: 'A roadside run with several class IV rapids. The highlight is Maytag (V-), whose rating is bumped up because Son of Maytag (IV) is immediately downstream.',
         creekin: `http://cacreeks.com/yuba-nfg.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/340`,
@@ -191,7 +191,7 @@ const riverDescrip = [
     },
     {
         id: 'r18',
-        name: 'East Fork of the Carson River',
+        name: 'East Fork Carson River',
         description: 'A simple class II run. Sidewinder Rapid (III) provides some excitement with a short drop. The highlight of this two-day run are the hot springs on either side of the river which provide popular campsites.',
         creekin: `http://cacreeks.com/carson-e.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/162`,

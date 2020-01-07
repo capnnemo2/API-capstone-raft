@@ -2,6 +2,35 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: black;
+}
+
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+}
+
+header {
+    background-color: grey;
+    padding: 15px;
+}
+
+form {
+    background-color: grey;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 10px 0 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    color: red;
+}
+
 .hidden {
     display: none;
 }
@@ -9,3 +38,80 @@
 .err-msg {
     color: red;
 }
+
+input[type=radio] {
+    margin-left: 5px;
+}
+
+input[type=checkbox] {
+    margin-left: 5px;
+}
+
+input[type=submit] {
+    padding: 10px;
+    background-color: red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 40%;
+}
+
+.btn {
+    width: 100%;
+    text-align: center;
+}
+
+#results {
+    background-color: lightgrey;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.result-block {
+    background-color: lightgrey;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    border-bottom: black 1px solid;
+}
+
+
+/* aligns private links all the way left */
+.result-block ul {
+    padding-left: 15px;
+}
+
+/* clumps the weather info together */
+.weather-blurb {
+    margin: 0px;
+}
+
+/* adds the margin back in after elimnating the odd spaces between weather-blurbs */
+.weather-info {
+    margin-bottom: 10px;
+}
+
+/* moves the weather icon over */
+.float {
+    float: left;
+    padding-left: 12%;
+}
+
+.travel {
+    font-weight: bold;
+}
+
+#js-directions p {
+    padding-left: 15px;
+}
+
+#another-river {
+    text-align: center;
+    padding: 10px;
+}
+
+#another-river a {
+    text-decoration: none;
+}
+
+
+/* on wider screens: private/outfitter radios in same line as class checkboxes. two different blocks side-by-side so that the river list sits below them both */
