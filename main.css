@@ -34,10 +34,10 @@ header h1 {
 /* begin scroll down link */
 header a span {
     position: absolute;
-    top: 80%;
+    top: 85%;
     left: 50%;
-    width: 46px;
-    height: 46px;
+    width: 56px;
+    height: 56px;
     margin-left: -23px;
     border: 1px solid #fff;
     border-radius: 100%;
@@ -64,6 +64,10 @@ form {
     margin: 0 auto;
     padding: 0 10px 0 10px;
     border-radius: 5px;
+}
+
+fieldset {
+    border: none;
 }
 
 ul {

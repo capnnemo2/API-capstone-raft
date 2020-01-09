@@ -13,26 +13,31 @@
         <h1>California Whitewater Rivers</h1>
         <p>A collection of popular rivers in California for whitewater boating. Whether you're organizing a private trip or looking for a rafting outfitter, you can find all the information you need here.</p>
         <!-- scroll down link below, has kinks... -->
-        <a href="#js-form"><span></span></a>
+        <a href="#" class="scroll-down"><span></span></a>
     </header>
     
 
     <form id="js-form">
-
-        <h2>Is this a private trip or are you looking for an outfitter?</h2>
-
-        <label><input type="radio" name="tripType" value="private" required>Private trip</label><br>
-        <label><input type="radio" name="tripType" value="outfitter" required>Outfitter trip</label><br>
+        <fieldset>
+            <legend><h2>Is this a private trip or are you looking for an outfitter?</h2></legend>
+            <label><input type="radio" name="tripType" value="private" required>Private trip</label><br>
+            <label><input type="radio" name="tripType" value="outfitter" required>Outfitter trip</label><br>
+        </fieldset>
         
 
-        <h2>What class are you qualified and looking for?</h2>
-<!-- when you choose a class: the screen should adjust so that the get info button is visible at the bottom -->
-        <label><input id="js-class1" type="checkbox" name="classRapids" value="1">I</label>
-        <label><input id="js-class2" type="checkbox" name="classRapids" value="2">II</label>
-        <label><input id="js-class3" type="checkbox" name="classRapids" value="3">III</label>
-        <label><input id="js-class4" type="checkbox" name="classRapids" value="4">IV</label>
-        <label><input id="js-class5" type="checkbox" name="classRapids" value="5">V</label>
-        <label><input id="js-check-all" type="checkbox" name="classRapids">All</label>
+        
+        
+        <fieldset>
+            <legend><h2>What class are you qualified and looking for?</h2></legend>
+            <!-- when you choose a class: the screen should adjust so that the get info button is visible at the bottom -->
+            <label><input id="js-class1" type="checkbox" name="classRapids" value="1">I</label>
+            <label><input id="js-class2" type="checkbox" name="classRapids" value="2">II</label>
+            <label><input id="js-class3" type="checkbox" name="classRapids" value="3">III</label>
+            <label><input id="js-class4" type="checkbox" name="classRapids" value="4">IV</label>
+            <label><input id="js-class5" type="checkbox" name="classRapids" value="5">V</label>
+            <label><input id="js-check-all" type="checkbox" name="classRapids">All</label>
+        </fieldset>
+        
 
         <!-- this header should be hidden until rivers are listed -->
         <h2 id="js-choose-header">Choose a river to get more information</h2>
@@ -79,13 +84,13 @@
 
     </form>
 
-    <div class="pic-divider"></div>
-
     
     <p id="js-err-msg" class="err-msg"></p>
 
     <!-- when we go live there should be a js autoscroll down to the results section -->
     <section id="results" class="hidden">
+
+        <div class="pic-divider"></div>
         
         <div class="result-block">
             <h2 id="js-river-name"></h2>
@@ -126,7 +131,7 @@
         </div>
 
         <div id="another-river">
-            <a href="#js-form">Check another river</a>
+            <a href="#" class="scroll-up">Check another river</a>
         </div>
     </section>
 

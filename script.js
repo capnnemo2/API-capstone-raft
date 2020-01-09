@@ -109,6 +109,26 @@ function displayRiverList() {
 
 
     watchForm();
+    scrollDown();
+    scrollUp();
+}
+
+function scrollDown() {
+    $('.scroll-down').click(function() {
+        $('html, body').animate({
+            scrollTop: $('#js-form').offset().top
+        }, 'slow');
+        return false;
+    });
+}
+
+function scrollUp() {
+    $('.scroll-up').click(function() {
+        $('html, body').animate({
+            scrollTop: $('#js-form').offset().top
+        }, 'slow');
+        return false;
+    });
 }
 
 function watchForm() {
@@ -127,18 +147,10 @@ function watchForm() {
         } else if (userTripType === 'outfitter') {
             displayOutfitterInfo();
         }
-
-        // smooth scroll to results, but doesn't seem to work in safari...
-        // it DOES work in chrome
-        // document.querySelector('#results').scrollIntoView({
-        //     behavior: 'smooth'
-        // });
-
-
-        // this works in chrome and safari!
+       
         $('html, body').animate({
-            scrollTop: $('#results').offset().top
-        }, 2000);
+            scrollTop: $('#js-river-name').offset().top
+        }, 'slow');
         return false;
     });
 }
