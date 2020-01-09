@@ -19,16 +19,13 @@
 
     <form id="js-form">
         <fieldset>
-            <legend><h2>Is this a private trip or are you looking for an outfitter?</h2></legend>
+            <legend>Is this a private trip or are you looking for an outfitter?</legend>
             <label><input type="radio" name="tripType" value="private" required>Private trip</label><br>
             <label><input type="radio" name="tripType" value="outfitter" required>Outfitter trip</label><br>
         </fieldset>
         
-
-        
-        
         <fieldset>
-            <legend><h2>What class are you qualified and looking for?</h2></legend>
+            <legend>What class are you qualified and looking for?</legend>
             <!-- when you choose a class: the screen should adjust so that the get info button is visible at the bottom -->
             <label><input id="js-class1" type="checkbox" name="classRapids" value="1">I</label>
             <label><input id="js-class2" type="checkbox" name="classRapids" value="2">II</label>
@@ -38,28 +35,25 @@
             <label><input id="js-check-all" type="checkbox" name="classRapids">All</label>
         </fieldset>
         
-
-        <!-- this header should be hidden until rivers are listed -->
-        <h2 id="js-choose-header">Choose a river to get more information</h2>
-        
-        <section>
-
+        <fieldset>
+            <!-- this header should be hidden until rivers are listed -->
+            <legend id="js-choose-header">Choose a river to get more information</legend>
             <div id="js-class1-rivers" class="class1 hidden">
                 <label><input type="radio" name="riverName" value="r1" required>American River, Sacramento</label><br>
             </div>
-    
+        
             <div id="js-class2-rivers" class="class2 hidden">
                 <label><input type="radio" name="riverName" value="r2" required>South Fork American River, C2G</label><br>
                 <label><input type="radio" name="riverName" value="r18" required>East Fork Carson River</label><br>
             </div>
-    
+        
             <div id="js-class3-rivers" class="class3 hidden">
                 <label><input type="radio" name="riverName" value="r3" required>South Fork American River, Upper</label><br>
                 <label><input type="radio" name="riverName" value="r4" required>South Fork American River, Lower</label><br>
                 <label><input type="radio" name="riverName" value="r5" required>Truckee River</label><br>
                 <label><input type="radio" name="riverName" value="r7" required>Kaweah River, Lower</label><br>
             </div>
-    
+        
             <div id="js-class4-rivers" class="class4 hidden">
                 <label><input type="radio" name="riverName" value="r11" required>North Fork American River</label><br>
                 <label><input type="radio" name="riverName" value="r12" required>Middle Fork American River</label><br>
@@ -67,21 +61,18 @@
                 <label><input type="radio" name="riverName" value="r14" required>Merced River</label><br>
                 <label><input type="radio" name="riverName" value="r6" required>Kaweah River, Upper</label><br>
             </div>
-    
+        
             <div id="js-class5-rivers" class="class5 hidden">
                 <label><input type="radio" name="riverName" value="r16" required>Cherry Creek</label><br>
                 <label><input type="radio" name="riverName" value="r17" required>North Fork Yuba River</label><br>
             </div>
-    
-        </section>
-        
+        </fieldset>
               
         <!-- this button should be hidden until rivers are listed -->
         <div class="btn">
             <input type="submit" value="Get info" id="js-get-info-btn">
         </div>
         
-
     </form>
 
     
@@ -93,7 +84,7 @@
         <div class="pic-divider"></div>
         
         <div class="result-block">
-            <h2 id="js-river-name"></h2>
+            <h2 id="js-river-name">Your river here</h2>
             <p id="js-river-descrip"></p>
         </div>
         
