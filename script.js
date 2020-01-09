@@ -159,6 +159,7 @@ function watchForm() {
 function displayPrivateInfo() {
     console.log(`ran displayPrivateInfo`);
     $('#results').removeClass('hidden');
+    $('#js-pic-divider').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     $('#js-private-links').empty();
@@ -179,6 +180,7 @@ function displayPrivateInfo() {
 function displayOutfitterInfo() {
     console.log(`ran displayOutfitterInfo`);
     $('#results').removeClass('hidden');
+    $('#js-pic-divider').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     if($('#js-outfitter').hasClass('hidden')) {
