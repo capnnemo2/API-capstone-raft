@@ -2,7 +2,6 @@
 
 
 function displayRiverList() {
-    console.log(`ran displayRiverList`);
     $('#js-check-all').click(function() {
         $('input:checkbox').not(this).prop('checked', this.checked);
     });
@@ -84,7 +83,6 @@ function scrollUp() {
 
 function watchForm() {
     $('form').submit(event => {
-        console.log(`ran watchForm`);
         event.preventDefault();
         const userTripType = $('input[name="tripType"]:checked').val();
 
@@ -104,7 +102,6 @@ function watchForm() {
 
 
 function displayPrivateInfo() {
-    console.log(`ran displayPrivateInfo`);
     $('#results').removeClass('hidden');
     $('#js-pic-divider').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
@@ -125,7 +122,6 @@ function displayPrivateInfo() {
 }
 
 function displayOutfitterInfo() {
-    console.log(`ran displayOutfitterInfo`);
     $('#results').removeClass('hidden');
     $('#js-pic-divider').removeClass('hidden');
     const userRiver = $('input[name="riverName"]:checked').val();
@@ -145,14 +141,12 @@ function displayOutfitterInfo() {
 }
 
 function displayRiverInfo(userRiver) {
-    console.log(`ran displayRiverInfo`);
     const userRiverName = riverDescrip.find(userRiverName => userRiverName.id === userRiver);
     $('#js-river-name').html(userRiverName.name);
     $('#js-river-descrip').html(userRiverName.description);
 }
 
 function getLocation() {
-    console.log(`ran getLocation`);
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(getTomTom);
     } else {
@@ -161,7 +155,6 @@ function getLocation() {
 }
 
 function getTomTom(position) {
-    console.log(`ran getTomTom`);
     const lat = position.coords.latitude;
     const long = position.coords.longitude;
     const userRiver = $('input[name="riverName"]:checked').val();
@@ -182,7 +175,6 @@ function getTomTom(position) {
 }
 
 function displayTomTom(responseJson) {
-    console.log(responseJson);
     const travelTime = responseJson.routes[0].summary.travelTimeInSeconds;
     const travelHours = Math.floor(travelTime / 3600);
     const travelMins = Math.floor((travelTime - (travelHours * 3600)) / 60);
@@ -203,7 +195,6 @@ function getWeather(userRiver) {
     const queryString = `lat=` + latitude + `&lon=` + longitude;
     const weatherApiKey = `appid=f83705c417eaaaa1cacb48b69b90c169`;
     const searchWeatherURL = weatherURL + '?' + queryString + '&' + weatherApiKey;
-    console.log(searchWeatherURL);
     fetch(searchWeatherURL)
     .then(response => {
         if(response.ok) {
@@ -218,7 +209,6 @@ function getWeather(userRiver) {
 }
 
 function displayWeather(responseJson) {
-    console.log(responseJson);
     const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
     const wind = Math.round((responseJson.wind.speed));
     $('#js-weather-details').append(
