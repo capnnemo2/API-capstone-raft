@@ -89,7 +89,7 @@ const riverDescrip = [
     {
         id: 'r7',
         name: 'Kaweah River, Lower',
-        description: 'A family-friendly class III run. Put-in is in the town of Three Rivers and Holiday Falls Rapid (III+-IV) is often not run because of variable reservoir levels.',
+        description: 'A family-friendly class III run. Put-in is in the town of Three Rivers and Holiday Falls Rapid (III+/-IV) is often not run because of variable reservoir levels.',
         creekin: `http://cacreeks.com/kaweah.htm`,
         awa: `https://www.americanwhitewater.org/content/River/detail/id/210/`,
         flow: `https://www.dreamflows.com/graphs/day.103.php`,

@@ -14,13 +14,56 @@ h1 {
 header {
     background-color: grey;
     padding: 15px;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url('imgs/cal-salmon-badass.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+header h1 {
+    margin-top: 25vh;
+}
+
+
+/* begin scroll down link */
+header a span {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    border: 1px solid #fff;
+    border-radius: 100%;
+}
+
+header a span::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin: -12px 0 0 -8px;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+/* end scroll down link */
+
 form {
-    background-color: grey;
+    background-color: white;
     width: 90%;
     margin: 0 auto;
     padding: 0 10px 0 10px;
+    border-radius: 5px;
 }
 
 ul {
@@ -58,6 +101,15 @@ input[type=submit] {
 .btn {
     width: 100%;
     text-align: center;
+}
+
+.pic-divider {
+    background-image: url('imgs/cal-salmon-2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin-top: 10vh;
 }
 
 #results {

@@ -127,6 +127,19 @@ function watchForm() {
         } else if (userTripType === 'outfitter') {
             displayOutfitterInfo();
         }
+
+        // smooth scroll to results, but doesn't seem to work in safari...
+        // it DOES work in chrome
+        // document.querySelector('#results').scrollIntoView({
+        //     behavior: 'smooth'
+        // });
+
+
+        // this works in chrome and safari!
+        $('html, body').animate({
+            scrollTop: $('#results').offset().top
+        }, 2000);
+        return false;
     });
 }
 
