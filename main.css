@@ -4,10 +4,16 @@
 
 body {
     background-color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+header h1,
+h2,
+.btn {
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 h1 {
-    text-transform: uppercase;
     text-align: center;
 }
 
@@ -88,6 +94,11 @@ fieldset {
     border: none;
 }
 
+legend {
+    font-size: 1.2em;
+    padding-top: 10px;
+}
+
 ul {
     list-style-type: none;
 }
@@ -114,10 +125,13 @@ input[type=checkbox] {
 
 input[type=submit] {
     padding: 10px;
-    background-color: red;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 40%;
+
+    color: white;
+    background-color: #302f91;
+    border-radius: 10px;
 }
 
 .btn {
