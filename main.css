@@ -32,9 +32,26 @@ header h1 {
 
 
 /* begin scroll down link */
+
+/* this is for the text itself */
+header a {
+    position: absolute;
+    top: 80%;
+    padding-top: 70px;
+    padding-left: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+header a:hover {
+    opacity: .5;
+}
+
+/* this is the scroll circle */
 header a span {
     position: absolute;
-    top: 85%;
+    top: 0%;
     left: 50%;
     width: 56px;
     height: 56px;
@@ -43,6 +60,7 @@ header a span {
     border-radius: 100%;
 }
 
+/* this is the scroll arrow */
 header a span::after {
     position: absolute;
     top: 50%;
