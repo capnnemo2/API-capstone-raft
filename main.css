@@ -174,22 +174,18 @@ input[type=submit] {
 }
 
 
-/* aligns private links all the way left */
 .result-block ul {
     padding-left: 15px;
 }
 
-/* clumps the weather info together */
 .weather-blurb {
     margin: 0px;
 }
 
-/* adds the margin back in after elimnating the odd spaces between weather-blurbs */
 .weather-info {
     margin-bottom: 10px;
 }
 
-/* moves the weather icon over */
 .float {
     float: left;
     padding-left: 12%;
@@ -211,9 +207,6 @@ input[type=submit] {
 #another-river a {
     text-decoration: none;
 }
-
-
-/* on wider screens: private/outfitter radios in same line as class checkboxes. two different blocks side-by-side so that the river list sits below them both */
 
 @media only screen and (min-width: 600px) {
     header h1 {

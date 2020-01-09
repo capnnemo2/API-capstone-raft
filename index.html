@@ -28,7 +28,6 @@
             
             <fieldset class="large-screen">
                 <legend>What class are you qualified and looking for?</legend>
-                <!-- when you choose a class: the screen should adjust so that the get info button is visible at the bottom -->
                 <label><input id="js-class1" type="checkbox" name="classRapids" value="1">I</label>
                 <label><input id="js-class2" type="checkbox" name="classRapids" value="2">II</label>
                 <label><input id="js-class3" type="checkbox" name="classRapids" value="3">III</label>
@@ -40,7 +39,6 @@
         
         <div class="container-3">
             <fieldset>
-                <!-- this header should be hidden until rivers are listed -->
                 <legend id="js-choose-header">Choose a river to get more information</legend>
                 <div id="js-class1-rivers" class="class1 hidden">
                     <label><input type="radio" name="riverName" value="r1" required>American River, Sacramento</label><br>
@@ -73,8 +71,6 @@
             </fieldset>
         </div>
         
-              
-        <!-- this button should be hidden until rivers are listed -->
         <div class="btn">
             <input type="submit" value="Get Info" id="js-get-info-btn">
         </div>
@@ -121,12 +117,10 @@
             </div>
         </div>
         
-
         <div id="another-river">
             <a href="#" class="scroll-up">Check another river</a>
         </div>
     </section>
-
 
     <script
     src="https://code.jquery.com/jquery-3.4.1.js"

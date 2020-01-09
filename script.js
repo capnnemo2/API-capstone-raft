@@ -7,77 +7,42 @@ function displayRiverList() {
         $('input:checkbox').not(this).prop('checked', this.checked);
     });
 
-    // for later:
-    // surely these can all be expressed in a single loop, something like this?
-    // let elements = document.querySelectorAll('input[type=checkbox]');
-    // for (let i = 0; i < elements.length; i++) {
-    //     elements[i].change(function() {
-    //         if(this.checked != true) {
-    //             $('#js-class[i]-rivers').hide();
-    //         } else {
-    //             $('#js-class[i]-rivers').show();
-    //         }
-    //     });
-    // }
-
     $('#js-class1').change(function() {
         if(this.checked != true) {
             $('#js-class1-rivers').hide();
-            // $('#js-choose-header').hide();
-            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class1-rivers').show();
-            // $('#js-choose-header').show();
-            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class2').change(function() {
         if(this.checked != true) {
             $('#js-class2-rivers').hide();
-            // $('#js-choose-header').hide();
-            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class2-rivers').show();
-            // $('#js-choose-header').show();
-            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class3').change(function() {
         if(this.checked != true) {
             $('#js-class3-rivers').hide();
-            // $('#js-choose-header').hide();
-            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class3-rivers').show();
-            // $('#js-choose-header').show();
-            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class4').change(function() {
         if(this.checked != true) {
             $('#js-class4-rivers').hide();
-            // $('#js-choose-header').hide();
-            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class4-rivers').show();
-            // $('#js-choose-header').show();
-            // $('#js-get-info-btn').show();
         }
     });
     $('#js-class5').change(function() {
         if(this.checked != true) {
             $('#js-class5-rivers').hide();
-            // $('#js-choose-header').hide();
-            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class5-rivers').show();
-            // $('#js-choose-header').show();
-            // $('#js-get-info-btn').show();
         }
     });
 
-    // for later:
-    // again, this could be a loop?
     $('#js-check-all').change(function() {
         if(this.checked != true) {
             $('#js-class1-rivers').hide();
@@ -85,28 +50,14 @@ function displayRiverList() {
             $('#js-class3-rivers').hide();
             $('#js-class4-rivers').hide();
             $('#js-class5-rivers').hide();
-            // $('#js-choose-header').hide();
-            // $('#js-get-info-btn').hide();
         } else {
             $('#js-class1-rivers').show();
             $('#js-class2-rivers').show();
             $('#js-class3-rivers').show();
             $('#js-class4-rivers').show();
             $('#js-class5-rivers').show();
-            // $('#js-choose-header').show();
-            // $('#js-get-info-btn').show();
         }
     });
-
-    // the below doesn't work because it lacks the .change(function()) of the above code?
-    // if($('#js-class1').checked != true || $('#js-class2').checked != true || $('#js-class3').checked != true || $('#js-class4').checked != true || $('#js-class5').checked != true || $('#js-check-all').checked != true) {
-    //     $('#js-choose-header').hide();
-    //     $('#js-get-info-btn').hide();
-    // } else {
-    //     $('#js-choose-header').show();
-    //     $('#js-get-info-btn').show();
-    // }
-
 
     watchForm();
     scrollDown();
@@ -136,10 +87,6 @@ function watchForm() {
         console.log(`ran watchForm`);
         event.preventDefault();
         const userTripType = $('input[name="tripType"]:checked').val();
-        
-        // for later:
-        // could declare userRiver and userRiverName here
-        // or create a separate function that could be called in each function where userRiver and userRiverName are currently being established repeatedly
 
         if (userTripType === 'private') {
             displayPrivateInfo();
@@ -213,10 +160,6 @@ function getLocation() {
     }
 }
 
-    // for later:
-    // find a way to trigger browser to ask for user location if they decline the first time
-    // or catch the error to ask them for their
-    // if location denied, promt user
 function getTomTom(position) {
     console.log(`ran getTomTom`);
     const lat = position.coords.latitude;
@@ -277,22 +220,9 @@ function getWeather(userRiver) {
 function displayWeather(responseJson) {
     console.log(responseJson);
     const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
-
-    // maybe don't need feels like temp
-    const temp2 = Math.round((responseJson.main.feels_like - 273) * 9/5 + 32);
-    $('#js-weather-details').empty();
-
     const wind = Math.round((responseJson.wind.speed));
-
-    // $('#js-weather-details').append(`<li>The weather is: ${responseJson.weather[0].main}</li>`);
-    // $('#js-weather-details').append(`<li>Temperature: ${temp}°F</li>`);
-    // $('#js-weather-details').append(`<li>Feels like: ${temp2}°F</li>`);
-    // $('#js-weather-details').append(`<li>Wind: ${responseJson.wind.speed} mph</li>`);
-    // $('#js-weather-details').append(`<img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon">`);
-
     $('#js-weather-details').append(
         `<div class="float"><img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon"></div><div class="weather-info"><p class="weather-blurb">${temp}°F</p><p class="weather-blurb">${responseJson.weather[0].main}</p><p class="weather-blurb">Wind: ${wind} mph</p></div>`);
-
 }
 
 
