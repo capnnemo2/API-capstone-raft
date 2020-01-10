@@ -211,6 +211,7 @@ function getWeather(userRiver) {
 function displayWeather(responseJson) {
     const temp = Math.round((responseJson.main.temp - 273.15) * 9/5 + 32);
     const wind = Math.round((responseJson.wind.speed));
+    $('#js-weather-details').empty();
     $('#js-weather-details').append(
         `<div class="float"><img src="https://openweathermap.org/img/wn/${responseJson.weather[0].icon}.png" alt="weather conditions icon"></div><div class="weather-info"><p class="weather-blurb">${temp}°F</p><p class="weather-blurb">${responseJson.weather[0].main}</p><p class="weather-blurb">Wind: ${wind} mph</p></div>`);
 }
