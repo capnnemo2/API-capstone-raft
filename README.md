@@ -1,6 +1,6 @@
 CALIFORNIA WHITEWATER RIVERS
 
-https://capnnemo2.github.io/API-capstone-raft/
+https://capnnemo2.github.io/California-Whitewater-Rivers/
 
 With this app you can get information about the most popular whitewater rivers in California. Private boaters can get directions to take-outs and the current weather. Links to beta and flow information are also provided. Boaters looking for an outfitter are provided with links to some of the more popular outfitters on a given river, as well as the current weather.
 
